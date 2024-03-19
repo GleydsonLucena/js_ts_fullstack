@@ -29,3 +29,5 @@ console.log(nome);
 // ex: let nomecliente = 'Luiz';
 
 // Não podemos redeclarar variáveis com let 
+
+// Não utilize var, utilize let
