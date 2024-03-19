@@ -16,7 +16,16 @@ console.log(nome);
 
 // Não pode começar um nome de variável com um número
 
-// Ex: let 1nome = 'seila'
+// Ex: let 1nome = 'seila';
 
 // Não podem conter espaços ou traço
-// ex: let nome-cliente = 'seila'
+// ex: let nome-cliente = 'seila';
+
+// Caso queueMicrotask, utilizamos camelCase
+// ex: let nomeCompletoDoCliente = 'Carlos Magnu';
+
+// Case=sensitive
+// ex: let nomeCliente = 'Luiz';
+// ex: let nomecliente = 'Luiz';
+
+// Não podemos redeclarar variáveis com let 
