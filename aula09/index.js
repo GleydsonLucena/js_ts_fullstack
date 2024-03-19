@@ -1,5 +1,5 @@
-var nome = 'Gleydson';
+let nome = 'Gleydson';
 console.log(nome);
 
-var nome = 'Luiz';
+let nome = 'Luiz';
 console.log(nome)
