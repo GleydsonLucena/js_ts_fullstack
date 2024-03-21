@@ -7,13 +7,4 @@ let nomeAluno; // undefined = Não aponta pra lugar nenhum
 let sobrenomeAluno = null; // nulo = não aponta pra lugar nenhum na memória
 const boolean = true; // ou false;(Valor lógico)
 
-console.log(typeof sobrenomeAluno);
-
-const a = [1,2];
-const b = a;
-
-console.log(a, b);
-
-a.push(5);
-console.log(a, b);
 
