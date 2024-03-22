@@ -3,7 +3,7 @@ let varB = 'B'; //C
 let varC = 'C'; //A
 
 varA = varB;
-varB = varC;
-varC = varA;
+varB = varA;
+varC = varC;
 
 console.log(varA, varB, varC);
