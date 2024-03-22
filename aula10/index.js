@@ -20,3 +20,10 @@ for(let i = 0;i<=100;i++) {
 }
 
 console.log(contador)
+
+contador  = 2;
+contador *= 2;
+contador *= 2;
+contador *= 2;
+
+console.log(contador)
