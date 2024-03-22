@@ -27,3 +27,9 @@ contador *= 2;
 contador *= 2;
 
 console.log(contador)
+
+const numero1 = 10;
+const numero2 = Number('5');
+
+console.log(numero1 + numero2);
+console.log(typeof numero2);
