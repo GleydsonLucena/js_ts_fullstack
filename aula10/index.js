@@ -1,5 +1,13 @@
 // OPERADORES ARITMÉTICOS
 
+// ORDEM DE PRECEDÊNCIA 
+/*
+()
+**
+* / %
++-
+*/
+
 const num1 = 10;
 const num2 = 3;
 
