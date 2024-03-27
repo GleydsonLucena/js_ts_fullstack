@@ -12,4 +12,3 @@ p.innerHTML += `NaN? ${Number.isNaN(num)} <br />`
 p.innerHTML += `Arredondando para baixo: ${Math.floor(num)} <br />`
 p.innerHTML += `Arredondando para cima: ${Math.ceil(num)} <br />`
 p.innerHTML += `Arredondando para cima: ${Math.ceil(num)} <br />`
-p.innerHTML += `${num} com duas casas decimais: ${num.toFixed(2)} <br />`
