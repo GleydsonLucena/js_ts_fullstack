@@ -5,8 +5,8 @@ let nomes = ['Gleydson', 'Luiz', 'Maria', 'Pedro'];
 // const removido = nomes.shift();
 // console.log(nomes);
 
-nomes.push('Luiza');
-nomes.push('Eduardo');
+// nomes.push('Luiza');
+// nomes.push('Eduardo');
 
 
 
