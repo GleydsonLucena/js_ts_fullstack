@@ -8,10 +8,10 @@
     
 // }
 let resultado;
-function soma(a, b) {
-    resultado = a * b;
+function soma(a=0, b=0) {
+    resultado = Number(a * b);
     return resultado;
 }
 
-console.log(soma()); 
+console.log(soma(1,5)); 
 console.log(resultado)
