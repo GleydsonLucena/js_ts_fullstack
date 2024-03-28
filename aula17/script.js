@@ -13,4 +13,5 @@ function soma(a, b) {
     return resultado;
 }
 
-console.log(soma(1,5));
+console.log(soma(1,5)); 
+console.log(resultado)
