@@ -7,11 +7,11 @@
 //     saudação(array[i]);
     
 // }
-let resultado;
-function soma(a=0, b=0) {
-    resultado = Number(a * b);
-    return resultado;
-}
+// let resultado;
+// function soma(a=0, b=0) {
+//     resultado = Number(a * b);
+//     return resultado;
+// }
 
-console.log(soma(1,5)); 
-console.log(resultado)
+// console.log(soma(1,5)); 
+// console.log(resultado)
