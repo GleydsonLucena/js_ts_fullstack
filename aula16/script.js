@@ -1,4 +1,4 @@
-const nomes = ['Gleydson', 'Luiz', 'Maria', 'Pedro'];
+let nomes = ['Gleydson', 'Luiz', 'Maria', 'Pedro'];
 // console.log(nomes.push('Eduardo'))
 // console.log(nomes.unshift('Otavio'))
 // console.log(nomes.unshift('Flávio'))
@@ -11,3 +11,6 @@ nomes.push('Eduardo');
 
 
 console.log(nomes.slice(3, -1))
+nomes = 133;
+
+console.log(nomes instanceof Array);
