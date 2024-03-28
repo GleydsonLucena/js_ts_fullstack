@@ -15,3 +15,9 @@
 
 // console.log(soma(1,5)); 
 // console.log(resultado)
+
+const nome = function (n) {
+    return n ** 0.5;
+};
+
+console.log(nome(9))
