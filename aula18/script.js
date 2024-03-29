@@ -27,4 +27,16 @@
 
 // console.log(pessoa1.nome);
 
+function criarPessoa (nome, sobrenome, idade) {
+    return {
+        nome: nome,
+        sobrenome: sobrenome, 
+        idade: idade
+    };
+}
+
+const pessoa1 = criarPessoa('Gleydson', 'Lucena', 23);
+const pessoa2 = criarPessoa('Samara', 'Souza', 21);
+
+console.log(pessoa2.idade);
 
