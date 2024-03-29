@@ -25,10 +25,6 @@ const pessoa2 = {
     idade: 55
 }
 
-const array = [pessoa1, pessoa2];
 
-console.log(array);
 
-for (i = 0; i < array.length; i++); {
-    
-}
+
