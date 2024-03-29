@@ -27,16 +27,27 @@
 
 // console.log(pessoa1.nome);
 
-function criarPessoa (nome, sobrenome, idade) {
-    return {
-        nome,
-        sobrenome, 
-        idade
-    };
+// function criarPessoa (nome, sobrenome, idade) {
+//     return {
+//         nome,
+//         sobrenome, 
+//         idade
+//     };
+// }
+
+// const pessoa1 = criarPessoa('Gleydson', 'Lucena', 23);
+// const pessoa2 = criarPessoa('Samara', 'Souza', 21);
+
+// console.log(pessoa2, pessoa1);
+
+const pessoa1 = {
+    nome: 'Luiz',
+    sobrenome: 'Lucena', 
+    idade: 23,
+
+    falarAlgo () {
+        console.log(`${this.nome}${this.sobrenome} está falando 'oi'`)
+    }
 }
 
-const pessoa1 = criarPessoa('Gleydson', 'Lucena', 23);
-const pessoa2 = criarPessoa('Samara', 'Souza', 21);
-
-console.log(pessoa2, pessoa1);
-
+pessoa1.falarAlgo();
