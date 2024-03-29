@@ -47,7 +47,19 @@ const pessoa1 = {
 
     falarAlgo () {
         console.log(`${this.nome}${this.sobrenome} está falando 'oi'`)
+    },
+
+    incrementarIdade() {
+        this.idade++
     }
 }
 
 pessoa1.falarAlgo();
+console.log(pessoa1.idade);
+pessoa1.incrementarIdade()
+console.log(pessoa1.idade);
+
+for (let i=0;i<=10;i++) {
+    pessoa1.incrementarIdade();
+    console.log(pessoa1.idade);
+};
