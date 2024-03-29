@@ -3,5 +3,25 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 5rem;
+    font-size: 1.2rem;
+}
+
+.main-contanier {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0f0f0f;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #fff;
+}
+
+.container h1 {
+    font-weight: 900;
 }
