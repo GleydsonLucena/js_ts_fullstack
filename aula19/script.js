@@ -3,6 +3,9 @@ tipos de dados primitivos - string, Number, boolen, underfined,
 null (biging, symbol)
 */
 
-let nome = 'Gledson';
-nome = 'Luiz';
-console.log(typeof nome);
+let a ='A';
+let b = a;
+console.log(a, b);
+
+a = 'outra coisa';
+console.log(a, b);
