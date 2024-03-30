@@ -9,20 +9,23 @@ function meuEscopo() {
         const peso = document.getElementById('txtpeso');
         const altura = document.getElementById('txtaltura');
 
+        let pessoas = [];
+
         function cirarPessoa (nome, sobrenome, peso, altura) {
-            return {
+            pessoa = {
             nome,
             sobrenome, 
             peso,
             altura
             };
+
+            pessoas.unshift(pessoa);
+            pessoa = ''
         } 
-
-        let pessoas = [];
         let pessoa = cirarPessoa(nome.value, sobrenome.value, peso.value, altura.value);
-
-        pessoas.unshift(pessoa);
-
-        console.log(pessoas)
+        
+        const dados = document.querySelector('dados');
+        
+        dados.innerHTML = `<p>${nome.value} ${sobrenome.value}  ${peso.value} ${altura.value}</p>`
     });
 }
