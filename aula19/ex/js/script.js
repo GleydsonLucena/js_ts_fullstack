@@ -1,5 +1,6 @@
 function meuEscopo() {
     const form = document.querySelector('.form');
+    const dados = document.querySelector('.dados');
 
     form.addEventListener('submit', eventoEnviar=(evento)=> {
         evento.preventDefault();
@@ -15,8 +16,13 @@ function meuEscopo() {
             peso,
             altura
             };
-        }
+        } 
 
+        let pessoas = [];
         let pessoa = cirarPessoa(nome.value, sobrenome.value, peso.value, altura.value);
+
+        pessoas.unshift(pessoa);
+
+        console.log(pessoas)
     });
 }
