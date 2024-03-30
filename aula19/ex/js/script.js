@@ -4,6 +4,10 @@ const txtsobrenome = document.getElementById("txtsobrenome").value;
 const txtpeso = document.getElementById("txtpeso").value;
 const txtaltura = document.getElementById("txtaltura").value;
 
+form.onsubmit = function(evento) {
+    
+};
+
 function criarPessoa (nome, sobrenome, peso, altura) {
     return { 
         nome, 
