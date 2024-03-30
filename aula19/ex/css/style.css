@@ -43,3 +43,9 @@ label {display: none;}
     padding: .5rem;
     
 }
+
+.dados {
+    text-align: left;
+    margin: 3rem;
+    max-width: 15rem;
+}

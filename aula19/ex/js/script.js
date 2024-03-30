@@ -12,20 +12,18 @@ function meuEscopo() {
         let pessoas = [];
 
         function cirarPessoa (nome, sobrenome, peso, altura) {
-            pessoa = {
+            return {
             nome,
             sobrenome, 
             peso,
             altura
             };
-
-            pessoas.unshift(pessoa);
-            pessoa = ''
         } 
+
         let pessoa = cirarPessoa(nome.value, sobrenome.value, peso.value, altura.value);
         
-        const dados = document.querySelector('dados');
+        const dados = document.querySelector('.parag');
         
-        dados.innerHTML = `<p>${nome.value} ${sobrenome.value}  ${peso.value} ${altura.value}</p>`
+        dados.innerHTML += `<p>${pessoa.nome} ${pessoa.sobrenome}  ${pessoa.peso} ${pessoa.altura}</p>`
     });
 }
