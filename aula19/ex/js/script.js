@@ -1,7 +1,8 @@
-const txtnome = document.getElementById("txtnome");
-const txtsobrenome = document.getElementById("txtsobrenome");
-const txtpeso = document.getElementById("txtpeso");
-const txtaltura = document.getElementById("txtaltura");
+const form = document.querySelector('.form');
+const txtnome = document.getElementById("txtnome").value;
+const txtsobrenome = document.getElementById("txtsobrenome").value;
+const txtpeso = document.getElementById("txtpeso").value;
+const txtaltura = document.getElementById("txtaltura").value;
 
 function criarPessoa (nome, sobrenome, peso, altura) {
     return { 
@@ -12,3 +13,4 @@ function criarPessoa (nome, sobrenome, peso, altura) {
     }
 };
 
+criarPessoa(txtnome, txtsobrenome, txtpeso, txtaltura);
