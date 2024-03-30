@@ -1,20 +1,22 @@
-const form = document.querySelector('.form');
-const txtnome = document.getElementById("txtnome").value;
-const txtsobrenome = document.getElementById("txtsobrenome").value;
-const txtpeso = document.getElementById("txtpeso").value;
-const txtaltura = document.getElementById("txtaltura").value;
+function meuEscopo() {
+    const form = document.querySelector('.form');
 
-form.onsubmit = function(evento) {
-    
-};
+    form.addEventListener('submit', eventoEnviar=(evento)=> {
+        evento.preventDefault();
+        const nome = document.getElementById('txtnome');
+        const sobrenome = document.getElementById('txtsobrenome');
+        const peso = document.getElementById('txtpeso');
+        const altura = document.getElementById('txtaltura');
 
-function criarPessoa (nome, sobrenome, peso, altura) {
-    return { 
-        nome, 
-        sobrenome, 
-        peso,
-        altura 
-    }
-};
+        function cirarPessoa (nome, sobrenome, peso, altura) {
+            return {
+            nome,
+            sobrenome, 
+            peso,
+            altura
+            };
+        }
 
-criarPessoa(txtnome, txtsobrenome, txtpeso, txtaltura);
+        let pessoa = cirarPessoa(nome.value, sobrenome.value, peso.value, altura.value);
+    });
+}
