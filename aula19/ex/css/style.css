@@ -6,6 +6,8 @@
     font-size: 1.2rem;
 }
 
+label {display: none;}
+
 .main-contanier {
     display: flex;
     align-items: center;
@@ -19,9 +21,25 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
     background: #fff;
 }
 
 .container h1 {
     font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.caixas-form {
+    padding: .5rem;
+    
 }
