@@ -1,7 +1,8 @@
-function falarOi () {
-    return 'Oi';
-}
+// function falarOi () {
+//     return 'Oi';
+// }
 
-const vaiExecultar = true;
+// const vaiExecultar = true;
 
-console.log(vaiExecultar && falarOi());
+// console.log(vaiExecultar && falarOi());
+
