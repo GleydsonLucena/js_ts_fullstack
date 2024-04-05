@@ -11,5 +11,5 @@
 const usuario = 'Luiz';
 const senha = '123456';
 const logar = usuario === 'Luiz' && senha === '123456';
-console.log(logar);
+console.log(!true);
 
