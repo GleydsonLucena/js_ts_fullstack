@@ -1,3 +1,7 @@
-console.log('Luiz otavio' && false && 'Maria');
+function falarOi () {
+    return 'Oi';
+}
 
-console.log('Gleydson' && 'Maria');
+const vaiExecultar = true;
+
+console.log(vaiExecultar && falarOi());
