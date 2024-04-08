@@ -57,13 +57,12 @@ label {
     
 }
 
-.caixa-form:nth-child(9) {
+.caixa-form:nth-child(5) {
     cursor: pointer;
-    margin-top: 1.5rem;
     background-color: transparent;
 }
 
-.caixa-form:nth-child(9):hover {
+.caixa-form:nth-child(5):hover {
     border: .1rem solid rgb(9, 180, 180);
 }
 
@@ -74,5 +73,11 @@ label {
 .resultado {
     display: none;
     font-size: 1rem;
+}
+
+.dados-imc {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
