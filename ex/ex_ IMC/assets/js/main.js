@@ -1,15 +1,15 @@
-const meuEscopo = () => {
-    const peso = document.getElementById('txtpeso');
-    const altura = document.getElementById('txtaltura');
-    const botao = document.querySelector('.btn');
-    
-    botao.addEventListener('click', msg=()=> {
-        
-        console.log()
-    })
-    
-}
+const form = document.querySelector('form');
 
-meuEscopo()
+form.addEventListener('submit', function pararSubmit (event) {
+   event.preventDefault(); 
+} )
 
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', function cliqueiCalcular () {
+    const peso = Number(document.querySelector('#txtpeso').value);
+    const altura = Number(document.querySelector('#txtaltura').value);
+    
+    console.log(peso / (altura ** 1/2))
+})
 
