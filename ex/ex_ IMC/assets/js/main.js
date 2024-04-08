@@ -26,7 +26,7 @@ function exibirResultado (imc) {
     } else if (imc >= 35 && imc < 40) {
         resultado.innerHTML = `Seu IMC é ${imc} => Obesidade grau 2.`;
         resultado.style.background = 'red';
-    } else if (imc > 40) {
+    } else {
         resultado.innerHTML = `Seu IMC é ${imc} => Obesidade grau 3.`;
         resultado.style.background = 'red';
     }
