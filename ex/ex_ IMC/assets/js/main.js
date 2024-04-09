@@ -49,7 +49,7 @@ function exibirResultado (msg) {
 
     const tipoImc = validadorImc(msg)
 
-    // // p.innerHTML = `Seu IMC é ${msg} -> ${tipoImc}`;
+    p.innerHTML = `Seu IMC é ${msg} -> ${tipoImc}`;
 }
 // EVENTOS
 
