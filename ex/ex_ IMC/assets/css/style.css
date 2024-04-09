@@ -71,7 +71,6 @@ label {
 }
 
 .resultado {
-    display: none;
     font-size: 1rem;
 }
 
@@ -81,7 +80,5 @@ label {
     margin: 2rem 0;
 }
 
-.cor-vermelha {
-    background: red;
-}
+
 
