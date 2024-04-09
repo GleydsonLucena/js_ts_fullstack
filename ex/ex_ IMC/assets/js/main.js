@@ -39,7 +39,7 @@ function validadorImc (imc) {
     }
 }
 
-function exibirResultado (msg, isValid) {
+function exibirResultado (msg) {
     const resultado = document.querySelector(".resultado");
     resultado.innerHTML = '';
     const p = criarParagrafo();
@@ -66,10 +66,10 @@ botao.addEventListener("click", cliqueiCalcular = () => {
     const altura = Number(inputAltura.value);
 
     if (!peso) {
-        return exibirResultado('Peso inválido!', false)
+        return alert('Peso inválido')
     }
     if (!altura) {
-        return exibirResultado('Altura inválido!', false)
+        return alert('Altura inválido!')
     }
 
     exibirResultado(calcularImc(peso, altura));
