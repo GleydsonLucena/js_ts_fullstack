@@ -8,6 +8,15 @@ function calcularImc (peso, altura) {
     return imc.toFixed(1)
 }
 
+function criarParagrafo () {
+    const resultado = document.querySelector(".resultado");
+
+    const p = document.createElement("p");
+    resultado.appendChild(p);
+    p.classList.add("caixa-form");
+    p.classList.add("parag");
+}
+
 // EVENTOS
 
 form.addEventListener("submit", previnirSubmit = (event) => {
@@ -22,5 +31,7 @@ botao.addEventListener("click", cliqueiCalcular = () => {
     const peso = Number(inputPeso.value);
     const altura = Number(inputAltura.value);
 
-    console.log(calcularImc(peso, altura));
+    
+    calcularImc(peso, altura);
+    criarParagrafo();
 })
