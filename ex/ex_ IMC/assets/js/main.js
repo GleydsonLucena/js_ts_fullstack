@@ -8,15 +8,50 @@ function calcularImc (peso, altura) {
     return imc.toFixed(1)
 }
 
-function criarParagrafo () {
-    const resultado = document.querySelector(".resultado");
-
-    const p = document.createElement("p");
-    resultado.appendChild(p);
-    p.classList.add("caixa-form");
-    p.classList.add("parag");
+function criarClass (imc) {
+    if (imc <= 18.5) {
+        return 'amarelo'
+    } else if (imc >= 18.6 && imc <= 24.9) {
+        return 'verde'
+    } else if (imc >= 25) {
+        return 'vermelho'
+    }
 }
 
+function criarParagrafo () {
+    const p = document.createElement("p");
+    return p
+}
+
+function validadorImc (imc) {
+    if (imc <= 18.5) {
+        return 'Abaixo do peso'
+    } else if (imc >= 18.6 && imc <= 24.9) {
+        return 'Peso normal'
+    } else if (imc >= 25 && imc <= 29.9) {
+        return 'Sobrepeso'
+    } else if (imc >= 30 && imc <= 34.9) {
+        return 'Obesidade grau 1'
+    }  else if (imc >= 35 && imc <= 39.9) {
+        return 'Obesidade grau 2'
+    } else {
+        return 'Obesidade grau 3'
+    }
+}
+
+
+function exibirResultado (msg) {
+    const resultado = document.querySelector(".resultado");
+    resultado.innerHTML = '';
+    const p = criarParagrafo();
+    resultado.appendChild(p)
+    p.classList.add('caixa-form');
+    p.classList.add(criarClass(msg));
+
+    const tipoImc = validadorImc(msg)
+
+    p.innerHTML = `Seu IMC é ${msg} -> ${tipoImc}`;
+}
 // EVENTOS
 
 form.addEventListener("submit", previnirSubmit = (event) => {
@@ -31,7 +66,5 @@ botao.addEventListener("click", cliqueiCalcular = () => {
     const peso = Number(inputPeso.value);
     const altura = Number(inputAltura.value);
 
-    
-    calcularImc(peso, altura);
-    criarParagrafo();
+    exibirResultado(calcularImc(peso, altura));
 })
