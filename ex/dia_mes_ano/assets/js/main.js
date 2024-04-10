@@ -60,7 +60,7 @@ zeroAEsquerda = (num) => {
     return num >= 10 ? num : `0${num}`
 }
 
-getDate = () => {
+getData = () => {
     const data = new Date()
     const diaDaSemana = data.getDay();
     const dia = zeroAEsquerda(data.getDate());
@@ -81,12 +81,7 @@ mostrarData = () => {
     const h1 = document.querySelector('.data');
     const p = criarP();
     h1.appendChild(p)
-    p.innerHTML = getDate();
+    p.innerHTML = getData();
 
 } 
-
-mostrarData()
-
-
-
-
+mostrarData() 
