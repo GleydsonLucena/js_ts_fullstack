@@ -18,7 +18,7 @@ criarTags = () => {
         const tag = document.createElement(elementos[i].tag);
         const texto = elementos[i].texto;
         tag.innerHTML = texto;
-        div.appendChild(tag)
+        div.appendChild(tag);
     }
 
 }
