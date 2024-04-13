@@ -7,7 +7,7 @@ const chave = 'nome';
 console.log(pessoa[chaves])
 
 for (let i in pessoa) {
-    console.log(pessoa[i])
+    console.log(pessoa[i]
 }
 
 
