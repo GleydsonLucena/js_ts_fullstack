@@ -3,6 +3,8 @@ const pessoa = {
     sobrenome: 'Lucena', 
     idade: 23
 };
+const chave = 'nome';
+console.log(pessoa[chaves])
 
 for (let i in pessoa) {
     console.log(pessoa[i])
