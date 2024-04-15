@@ -5,6 +5,7 @@ const bgColorBody = estilosBody.backgroundColor;
 
 for (let p of ps) {
     p.style.backgroundColor = bgColorBody;
+    p.style.color = 'white'
 }
 
 
