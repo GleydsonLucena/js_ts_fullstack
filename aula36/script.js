@@ -11,7 +11,7 @@ for (let i in pessoa) {
 }
 
 
-// for (let i = 0; i<frutas.length; i++) {
+// for (let i = 0; i<frutas.length; i++) 
 //     console.log(frutas[i]);
 // }
 //  FOR IN LER OS INDICE OU CHAVES
