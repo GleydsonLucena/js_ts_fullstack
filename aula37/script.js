@@ -3,6 +3,6 @@ const nome = ['Gleydson', 'Lucena', 'Luiz'];
 //     console.log(nome[i]);
 // }
 
-for (let valor of nome) {
-    console.log(valor);
-}
+// for (let valor of nome) {
+//     console.log(valor);
+// }
