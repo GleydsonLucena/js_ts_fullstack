@@ -8,7 +8,7 @@ console.log(pessoa[chaves])
 
 for (let i in pessoa) {
     console.log(pessoa[i])
-}
+
 
 
 // for (let i = 0; i<frutas.length; i++) {
