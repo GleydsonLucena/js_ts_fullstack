@@ -1,4 +1,4 @@
 const nome = 'Gleydson Lucena';
-for (let i = 0; i < nome.length; i++) {
+for (let i in nome) {
     console.log(nome[i]);
 }
