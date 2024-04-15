@@ -1,5 +1,3 @@
-const maiorNumero=(a=0, b=0) => {
-    return x > y ? x : y;
-}
+const maiorNumero=(a=0, b=0) => a > b ? a : b;
 
 console.log(maiorNumero(12, 52))
