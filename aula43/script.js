@@ -1,11 +1,14 @@
 const checkNumero = (num) => {
-    if (num % 3 === 0) {
-        return 'Fizz'
-    } else if (num % 5 === 0) {
-        return 'Buzz'
-    } else if (num % 5 === 0 && num % 5 === 0) {
-        return 'FizzBuzz'
+    if (typeof num != 'number') {
+        return num
     }
+    if (num % 3 === 0 && num % 5 === 0) return 'FizzBuzz'
+    if (num % 3 === 0) return 'Fizz'
+    if (num % 5 === 0) return 'Buzz'
+    
     return num;
+
 }
-console.log(checkNumero(15))
+for (let i = 0 ; i <= 100; i++) {
+    console.log(i, checkNumero(i))
+}
