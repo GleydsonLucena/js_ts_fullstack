@@ -41,10 +41,24 @@ body {
     text-shadow: 0 .3rem .2rem var(--cor01);
 }
 
-.contador-container h1 {
+h1 {
+   position: relative;
     font-size: 5rem;
     color: var(--cor01);
     text-shadow: 0 .3rem .2rem var(--cor03);
+}
+
+h1::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    top: 90%;
+    left: 49%;
+    width: 30%;
+    height: 0.4rem;
+    border-radius: 2rem;
+    background: var(--cor01);
+    transition: all .5s ease-in-out;
 }
 
 .botoes {
