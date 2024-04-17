@@ -3,13 +3,35 @@ const pausar = document.querySelector('#pausar');
 const zerar = document.querySelector('#zerar');
 const contador = document.querySelector('.contador');
 
-const cirarHoraDosSegundos=(segundos)=>{
+const contarSegundos=(segundos)=> {
     const data = new Date(segundos * 1000);
-    return data.toLocaleTimeString('pt:BR', {
-        hour12: false
-    })
+    return data.toLocaleTimeString('pt-BR', {
+        timeZone: 'UTC'
+    });
+} 
+let timer;
+let segundos = 0;
+const inciarRelogio=()=> {
+    timer = setInterval(()=> {
+        segundos++
+        contador.innerHTML = contarSegundos(segundos);
+        
+    }, 1000);
 }
 
 inciar.addEventListener('click', (event)=>{
-   console.log(cirarHoraDosSegundos(10000))
+    clearInterval(timer);
+   inciarRelogio()
+   contador.style.color = '#fff'
+})
+
+pausar.addEventListener('click', (event)=> {
+    clearInterval(timer);
+    contador.style.color = 'red';
+})
+
+zerar.addEventListener('click', (event)=> {
+    clearInterval(timer);
+    contador.innerHTML = '00:00:00';
+    segundos = 0;
 })
