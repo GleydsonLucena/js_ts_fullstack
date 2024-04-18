@@ -19,19 +19,20 @@ const inciarRelogio=()=> {
     }, 1000);
 }
 
-inciar.addEventListener('click', (event)=>{
-    clearInterval(timer);
-   inciarRelogio()
-   contador.style.color = '#fff'
-})
-
-pausar.addEventListener('click', (event)=> {
-    clearInterval(timer);
-    contador.style.color = 'red';
-})
-
-zerar.addEventListener('click', (event)=> {
-    clearInterval(timer);
-    contador.innerHTML = '00:00:00';
-    segundos = 0;
+document.addEventListener('click', (e)=> {
+    const el = e.target;
+    if(el.classList.contains('iniciar')) {
+        clearInterval(timer);
+        inciarRelogio()
+        contador.style.color = '#fff'
+    }
+    if(el.classList.contains('pausar')) {
+        clearInterval(timer);
+        contador.style.color = 'red';
+    }
+    if(el.classList.contains('zerar')) {
+        clearInterval(timer);
+        contador.innerHTML = '00:00:00';
+        segundos = 0;
+    }
 })
