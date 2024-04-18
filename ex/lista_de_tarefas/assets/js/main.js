@@ -33,6 +33,7 @@ const excluirTarefa=()=>{
 
 adicionar.addEventListener('click', ()=> {
     const nomeValue = nomeTarefa.value;
+    if (!nomeValue) return;
 
     adicionarTarefa(nomeValue);
     
