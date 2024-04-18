@@ -36,3 +36,5 @@ document.addEventListener('click', (e)=> {
         segundos = 0;
     }
 })
+
+relogio()
