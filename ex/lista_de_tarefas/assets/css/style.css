@@ -78,6 +78,7 @@ label {
 
 .div-tarefa {
     display: flex;
+    margin-bottom: .5rem;
 }
 
 .botao-tarefa, .botao-adicionar  {

@@ -1,7 +1,11 @@
 const adicionar = document.querySelector('.botao-adicionar');
 const nomeTarefa = document.querySelector('#nome-tarefa');
 
-// FUNCOES 
+// FUNCOES
+const limpaInput=()=>{
+    nomeTarefa.value = '';
+    nomeTarefa.focus();
+} 
 
 const cirarElemento=(nomeElemento, classe)=>{
     const elemento = document.createElement(nomeElemento);
@@ -12,35 +16,37 @@ const cirarElemento=(nomeElemento, classe)=>{
 
 const adicionarTarefa=(nomeDaTarefa)=>{
     const lista = document.querySelector('.lista');
-    const div = cirarElemento('div', 'div-tarefa');
     const tarefa = cirarElemento('li', 'tarefas');
-    tarefa.innerText = nomeDaTarefa
     const botao = cirarElemento('button', 'botao-tarefa');
+    tarefa.innerText = nomeDaTarefa
     botao.innerText = 'Excluir'
-    div.appendChild(tarefa);
-    div.appendChild(botao);
-    lista.appendChild(div);
-}
-
-const excluirTarefa=()=>{
-    const tarefaRemovida = document.querySelector('.div-tarefa');
-    const classInvisivel = tarefaRemovida.classList.replace('div-tarefa', 'invisivel');
-
-    return classInvisivel;
+    tarefa.appendChild(botao);
+    lista.appendChild(tarefa);
+    limpaInput()
 }
 
 // EVENTOS
+
+nomeTarefa.addEventListener('keypress', (evento)=>{
+    if (evento.keyCode === 13) {
+        const nomeValue = nomeTarefa.value;
+        if (!nomeValue) return;
+        adicionarTarefa(nomeValue);
+    }
+})
 
 adicionar.addEventListener('click', ()=> {
     const nomeValue = nomeTarefa.value;
     if (!nomeValue) return;
 
     adicionarTarefa(nomeValue);
-    
 })
 
-const botaoExcluir = document.querySelector('.botao-tarefa');
-
-botaoExcluir.addEventListener('click', ()=>{
-    excluirTarefa();
+document.addEventListener('click', (e)=>{
+    const el = e.target;
+    if (el.classList.contains('botao-tarefa')) {
+        return el.parentNode.remove('.tarefas')
+    }
 })
+
+
