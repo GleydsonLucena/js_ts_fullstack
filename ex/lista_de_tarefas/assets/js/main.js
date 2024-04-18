@@ -22,6 +22,14 @@ const adicionarTarefa=(nomeDaTarefa)=>{
     lista.appendChild(div);
 }
 
+const excluirTarefa=()=>{
+    const tarefaRemovida = document.querySelector('.div-tarefa');
+    const classInvisivel = tarefaRemovida.classList.replace('div-tarefa', 'invisivel');
+
+    return classInvisivel;
+}
+
+// EVENTOS
 
 adicionar.addEventListener('click', ()=> {
     const nomeValue = nomeTarefa.value;
@@ -33,7 +41,5 @@ adicionar.addEventListener('click', ()=> {
 const botaoExcluir = document.querySelector('.botao-tarefa');
 
 botaoExcluir.addEventListener('click', ()=>{
-    const lista = document.querySelector('.lista');
-    const tarefaRemovida = document.querySelector('.div-tarefa');
-    lista.removeChild(tarefaRemovida);
+    excluirTarefa();
 })
