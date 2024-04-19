@@ -1,7 +1,7 @@
 // Argumentos fica salvo na variavel argumetns
 
-function funcao(a = 0, b = 0 ) {
-    console.log(a + b);
+function funcao({ nome, sobrenome, idade }) {
+    console.log(nome, sobrenome, idade);
 }
-
-funcao(2)
+let obj = {nome: 'Gleydson', sobrenome: 'Lucena', idade: 20};
+funcao(obj)
