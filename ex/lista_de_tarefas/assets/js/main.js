@@ -1,5 +1,6 @@
 const adicionar = document.querySelector('.botao-adicionar');
 const nomeTarefa = document.querySelector('#nome-tarefa');
+const lista = document.querySelector('.lista');
 
 // FUNCOES
 const limpaInput=()=>{
@@ -14,6 +15,18 @@ const cirarElemento=(nomeElemento, classe)=>{
     return elemento;
 }
 
+const salvarTarefas=()=>{
+    const todasTarefas = lista.querySelectorAll('li')
+    const listaDeTarefas = []
+
+    for (tarefa of todasTarefas) {
+        let tarefasTexto = tarefa.innerText;
+        tarefasTexto = tarefasTexto.replace('Excluir', '')
+        listaDeTarefas.push(tarefasTexto)
+    }
+    console.log(listaDeTarefas)
+}
+
 const adicionarTarefa=(nomeDaTarefa)=>{
     const lista = document.querySelector('.lista');
     const tarefa = cirarElemento('li', 'tarefas');
@@ -22,7 +35,8 @@ const adicionarTarefa=(nomeDaTarefa)=>{
     botao.innerText = 'Excluir'
     tarefa.appendChild(botao);
     lista.appendChild(tarefa);
-    limpaInput()
+    limpaInput();
+    salvarTarefas();
 }
 
 // EVENTOS
