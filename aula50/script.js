@@ -1,7 +1,7 @@
 // Argumentos fica salvo na variavel argumetns
 
-function funcao() {
-    console.log('Oi', arguments)
+function funcao(a = 0, b = 0 ) {
+    console.log(a + b);
 }
 
-funcao('Valor')
+funcao(2)
