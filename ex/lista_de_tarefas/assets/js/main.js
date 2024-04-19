@@ -21,10 +21,11 @@ const salvarTarefas=()=>{
 
     for (tarefa of todasTarefas) {
         let tarefasTexto = tarefa.innerText;
-        tarefasTexto = tarefasTexto.replace('Excluir', '')
-        listaDeTarefas.push(tarefasTexto)
+        tarefasTexto = tarefasTexto.replace('Excluir', '');
+        listaDeTarefas.push(tarefasTexto);
     }
-    console.log(listaDeTarefas)
+    const tarefasJSON = JSON.stringify(listaDeTarefas);
+    localStorage.setItem('tarefas', tarefasJSON);
 }
 
 const adicionarTarefa=(nomeDaTarefa)=>{
@@ -37,6 +38,15 @@ const adicionarTarefa=(nomeDaTarefa)=>{
     lista.appendChild(tarefa);
     limpaInput();
     salvarTarefas();
+}
+
+const addTarefasSalvas=()=>{
+    const resgatarTarefas = localStorage.getItem('tarefas');
+    const listaDeTarefas = JSON.parse(resgatarTarefas);
+    
+    for (tarefa of listaDeTarefas) {
+        adicionarTarefa(tarefa);
+    };
 }
 
 // EVENTOS
@@ -59,8 +69,10 @@ adicionar.addEventListener('click', ()=> {
 document.addEventListener('click', (e)=>{
     const el = e.target;
     if (el.classList.contains('botao-tarefa')) {
-        return el.parentNode.remove('.tarefas')
+        return el.parentNode.remove('.tarefas'), salvarTarefas()
+        
     }
 })
 
+addTarefasSalvas()
 
