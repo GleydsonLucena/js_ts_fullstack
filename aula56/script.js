@@ -15,11 +15,9 @@ function criaPessoa(nome, sobrenome, a, p){
             const cImc = this.peso / (this.altura ** 2);
             return cImc.toFixed(2);
         }, 
-        get nomeCompleto(valor) {return `${nome} ${sobrenome}`}
-
-        // Setter
-
-
+        nomeCompleto(valor) {
+            return `${nome} ${sobrenome}`
+        }
     };
 }
 
