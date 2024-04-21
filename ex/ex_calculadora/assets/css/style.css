@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --fontePrincipal: "Open Sans", sans-serif;
+    --cor1: #fd9f14;
+    --cor2: #A7A7A7;
+    --cor3: #323433;
+    --cor4: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontePrincipal);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    height: auto;
+    gap: 1rem;
+    border-radius: 2rem;
+    border: .7rem solid var(--cor1);
+    padding: 1rem;
+    background-color: var(--cor4);
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: end;
+    height: 3rem;
+    max-height: 3rem;
+    color: #fff;
+    border-bottom: .1rem solid var(--cor2);
+    padding: 1rem;
+}
+
+.calculation {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+    justify-content: end;
+    max-width: 100%;
+    height: auto;
+    max-height: 6rem;
+    font-size: 1.5rem;
+}
+
+.numbers {
+    display: flex;
+    flex-flow: wrap column;
+    max-width: 100%;
+}
+
+.caracters-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+}
+
+.caracters {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 50%;
+    color: #fff;
+    background-color: var(--cor3);
+}
+
+.special {
+    background: var(--cor2);
+}
+
+.operator {
+    background: var(--cor1);
+}
