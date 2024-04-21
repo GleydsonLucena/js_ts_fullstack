@@ -10,16 +10,25 @@ function criaCalculadora() {
 
         apgarUm() {
             this.display.innerText = this.display.innerText.slice(0, -1);
+        },
+
+        calcular() {
+            const resultado = document.querySelector('.numbers').innerText;
+            if (resultado) {
+                document.querySelector('.numbers').innerHTML = eval(resultado);
+            }
+        },
+
+        pressionarEnter() {
+            this.display.addEventListener('keyup', e=> {
+                if (e.keyCode === 13) {
+                    this.calcular();
+                }
+            })
         }
     }
 }
 
-function calcular() {
-    const resultado = document.querySelector('.numbers').innerText;
-    if (resultado) {
-        document.querySelector('.numbers').innerHTML = eval(resultado);
-    }
-}
 
 const calc = criaCalculadora();
 calc.caracters.addEventListener('click', e => {
@@ -43,7 +52,8 @@ calc.caracters.addEventListener('click', e => {
     }
 
     if (valor === '=') {
-       calcular();
+       calc.calcular();
+       calc.pressionarEnter();
     }
 
 
