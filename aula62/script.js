@@ -10,5 +10,5 @@ const novo = nome.split(' ');
 
 console.log(novo)
 
-const novos = novo.join(',');
+const novos = novo.join(' ');
 console.log(novos)
