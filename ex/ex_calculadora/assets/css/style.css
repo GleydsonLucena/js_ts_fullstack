@@ -22,6 +22,7 @@ body {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    background-color: #1f1f1f;
 }
 
 .main-container {
@@ -41,11 +42,11 @@ body {
     flex-direction: column-reverse;
     align-items: flex-end;
     justify-content: end;
-    height: 3rem;
-    max-height: 3rem;
-    color: #fff;
+    overflow-wrap: break-word;
+    min-height: 4.5rem;
     border-bottom: .1rem solid var(--cor2);
-    padding: 1rem;
+    padding-bottom: .5rem;
+    color: #fff;
 }
 
 .calculation {
@@ -53,15 +54,15 @@ body {
     flex-direction: column-reverse;
     align-items: end;
     justify-content: end;
+    overflow-wrap: break-word;
     max-width: 100%;
-    height: auto;
-    max-height: 6rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .numbers {
     display: flex;
-    flex-flow: wrap column;
+    overflow: hidden;
+    overflow-wrap: break-word;
     max-width: 100%;
 }
 

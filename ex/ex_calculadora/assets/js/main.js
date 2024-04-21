@@ -1,60 +1,52 @@
-// fUNÇÃO PARA PROTEGER O ESCOPO GLOBAL
-(function global(){
- 
-// FUNÇÕES
+function criaCalculadora() {
+    return {
+        display: document.querySelector('.numbers'),
 
-    function criaCalculadora() {
-        return {
-            display: document.querySelector('.numbers'),
+        caracters: document.querySelector('.caracters-container'),
 
-            calculation() {
-                let conta = this.display.innerText;
-                
-                try {
-                    conta = eval(conta);
+        limparDisplay() {
+            this.display.innerText = ''
+        }, 
 
-                    if (!conta) {
-                        alert('Conta inválida!');
-                        return;
-                    }
-
-                } catch (e) {
-                    alert('Conta inválida!');
-                    return;
-                }
-            },
-
-            deleteOne() {
-                this.display.innerText = this.display.innerText.slice(0, -1);
-            },
-
-            cleanCalc() {
-                this.display.innerText = '';
-            },
-
-            returnElement(el){
-                if (el.classList.contains('caracters')) {
-                    const elValue = el.innerText;
-                    if (elValue === 'C') {
-                        return calculadora.cleanCalc()
-                     } else if (elValue === '=') {
-                        this.calculation();
-                     }
-                     return this.display.innerText += elValue;
-                };
-            }
+        apgarUm() {
+            this.display.innerText = this.display.innerText.slice(0, -1);
         }
     }
+}
 
-    const calculadora = criaCalculadora();
+function calcular() {
+    const resultado = document.querySelector('.numbers').innerText;
+    if (resultado) {
+        document.querySelector('.numbers').innerHTML = eval(resultado);
+    }
+}
 
-// EVENTOS
+const calc = criaCalculadora();
+calc.caracters.addEventListener('click', e => {
+    const el = e.target;
+    const valor = e.target.innerText;
 
-    document.addEventListener('click', (e)=>{
-        const el = e.target;
-        if (el.classList.contains('delet')) {
-            calculadora.deleteOne();
-        }
-        if (el.innerText === calculadora.returnElement(el)){}
-    });
-})();
+    if (el.classList.contains('delet')) {
+        calc.apgarUm();
+    }
+
+    if (!el.classList.contains('caracters')) {
+        return;
+    }
+
+    if (valor === 'C') {
+        calc.limparDisplay();
+    }
+
+    if (valor != 'C' && valor != '=') {
+        calc.display.innerText += valor;
+    }
+
+    if (valor === '=') {
+       calcular();
+    }
+
+
+}
+)
+
