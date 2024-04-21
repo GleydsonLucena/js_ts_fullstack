@@ -21,16 +21,20 @@ function Calculadora() {
         })
     };
     
-
     this.digitarNumeros = () => {
         document.addEventListener('keydown', e=> {
             const tecla = e.key;
             
-            if (tecla === 'Backspace' || tecla === 'Delete' || tecla === 'Enter') {
+            if (tecla === 'Backspace' || tecla === 'Delete') {
                 this.apgarUm();
                 return;
             }
-            return this.display.innerText += tecla
+            if (tecla != 'Enter' ) {
+                this.display.innerText += tecla;
+            } else if (tecla === 'Enter') {
+                this.pressionarEnter();
+            }
+
         })
     }
 }
