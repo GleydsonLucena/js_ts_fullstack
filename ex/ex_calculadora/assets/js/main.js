@@ -1,26 +1,60 @@
 // fUNÇÃO PARA PROTEGER O ESCOPO GLOBAL
 (function global(){
-    // CONSTANTES
+ 
+// FUNÇÕES
 
-    const numberCalc = document.querySelector('.numbers');
+    function criaCalculadora() {
+        return {
+            display: document.querySelector('.numbers'),
 
-    // FUNÇÕES
+            calculation() {
+                let conta = this.display.innerText;
+                
+                try {
+                    conta = eval(conta);
 
-    const cleanCalc=()=>{
-        numberCalc.innerText = '';
+                    if (!conta) {
+                        alert('Conta inválida!');
+                        return;
+                    }
+
+                } catch (e) {
+                    alert('Conta inválida!');
+                    return;
+                }
+            },
+
+            deleteOne() {
+                this.display.innerText = this.display.innerText.slice(0, -1);
+            },
+
+            cleanCalc() {
+                this.display.innerText = '';
+            },
+
+            returnElement(el){
+                if (el.classList.contains('caracters')) {
+                    const elValue = el.innerText;
+                    if (elValue === 'C') {
+                        return calculadora.cleanCalc()
+                     } else if (elValue === '=') {
+                        this.calculation();
+                     }
+                     return this.display.innerText += elValue;
+                };
+            }
+        }
     }
 
-    const returnElement=(el)=>{
-        let elValue = el.innerText;
-        
-        return elValue === 'C' ? cleanCalc() : numberCalc.innerText += elValue;
-    }
+    const calculadora = criaCalculadora();
 
-    // EVENTOS
+// EVENTOS
+
     document.addEventListener('click', (e)=>{
-        const el = e.target; 
-
-        if (el.innerText === returnElement(el)){}
-        delet()
+        const el = e.target;
+        if (el.classList.contains('delet')) {
+            calculadora.deleteOne();
+        }
+        if (el.innerText === calculadora.returnElement(el)){}
     });
 })();

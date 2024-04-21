@@ -90,3 +90,12 @@ body {
 .operator {
     background: var(--cor1);
 }
+
+.caracters {
+    transition: all .3s ease-in-out;
+}
+
+.caracters:hover {
+    transform: scale(1.05);
+    
+}
