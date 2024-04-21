@@ -1,35 +1,42 @@
-function CriaCalculadora() {
+function Calculadora() {
     this.display = document.querySelector('.numbers');
     this.caracters = document.querySelector('.caracters-container');
 
-// METODOS
+    // METODOS
 
-    this.limparDisplay = ()=>{
-        this.display.innerText = ''
-    };
+    this.limparDisplay = () => this.display.innerText = '';
 
-    this.apgarUm = ()=>{
-        this.display.innerText = this.display.innerText.slice(0, -1);
-    };
+    this.apgarUm = () => this.display.innerText = this.display.innerText.slice(0, -1);
 
-    this.calcular = ()=>{
+    this.calcular = () => {
         const resultado = document.querySelector('.numbers').innerText;
-        if (resultado) {
-            document.querySelector('.numbers').innerHTML = eval(resultado);
-        }
+        if (resultado) document.querySelector('.numbers').innerHTML = eval(resultado);
     };
 
-    this.pressionarEnter = ()=>{
-        this.display.addEventListener('keyup', e=> {
-            if (e.keyCode === 13) {
+    this.pressionarEnter = () => {
+        document.addEventListener('keydown', e => {
+            if (e.key == 'Enter') {
                 this.calcular();
             }
         })
     };
+    
 
+    this.digitarNumeros = () => {
+        document.addEventListener('keydown', e=> {
+            const tecla = e.key;
+            
+            if (tecla === 'Backspace' || tecla === 'Delete' || tecla === 'Enter') {
+                this.apgarUm();
+                return;
+            }
+            return this.display.innerText += tecla
+        })
+    }
 }
 
-const calc = new CriaCalculadora();
+const calc = new Calculadora();
+calc.digitarNumeros()
 
 calc.caracters.addEventListener('click', e => {
     const el = e.target;
@@ -47,13 +54,13 @@ calc.caracters.addEventListener('click', e => {
         calc.limparDisplay();
     }
 
-    if (valor != 'C' && valor != '=') {
+    if (valor != 'C' && valor != '=' && valor != 'backspace') {
         calc.display.innerText += valor;
     }
 
     if (valor === '=') {
-       calc.calcular();
-       calc.pressionarEnter();
+        calc.calcular();
+        calc.pressionarEnter();
     }
 }
 )
