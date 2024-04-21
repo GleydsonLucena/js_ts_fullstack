@@ -9,7 +9,38 @@ function* gerador1(){
 
 const g1 = gerador1()
 
-for (let valor of g1) {
-    console.log(valor)
+function* gerador3() {
+    yield 0;
+    yield 1;
+    yield 3;
 }
-po
+
+function* gerador4 () {
+    yield* gerador3();
+    yield 3;
+    yield 4;
+    yield 5;
+}
+
+const g4 = gerador4();
+
+
+function* geradora5() {
+    yield ()=>{
+        console.log('Vim do Y1')
+    };
+
+    yield ()=>{
+        console.log('Vim do Y2')
+    };
+
+    yield ()=>{
+        console.log('Vim do Y3')
+    };
+}
+
+const g5 = geradora5();
+
+const f1 = g5.next().value;
+const f2 = g5.next().value;
+const f3 = g5.next().value;
