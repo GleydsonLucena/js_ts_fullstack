@@ -12,3 +12,4 @@ const g1 = gerador1()
 for (let valor of g1) {
     console.log(valor)
 }
+po
