@@ -1,7 +1,5 @@
-// const nome = ['Eduardo', 'Maria', 'Joana'];
+const nome = ['Eduardo', 'Maria', 'Joana'];
 
-const nome = new Array() 
-
-nome[1] = 'Gleydson';
+nome.push('Gleydson');
 
 console.log(nome)
