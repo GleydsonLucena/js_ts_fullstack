@@ -17,12 +17,25 @@
 // RETORNE AS PESSOAS CUJO NOME TERMINA COM A
 
 const pessoas = [
-    {nome:'Luiz', idade: 62},
-    {nome:'Maria', idade: 23},
-    {nome:'Eduardo', idade: 55},
-    {nome:'Letícia', idade: 19},
-    {nome:'Rosana', idade: 32},
-    {nome:'Wallace', idade: 47},
+    { nome: 'Luiz', idade: 62 },
+    { nome: 'Maria', idade: 23 },
+    { nome: 'Eduardo', idade: 55 },
+    { nome: 'Letícia', idade: 19 },
+    { nome: 'Rosana', idade: 32 },
+    { nome: 'Wallace', idade: 47 }
 ]
 
-const pessoa = pessoas.filter(CSSMathValue)
+const pessoa = pessoas.filter(valor => {
+    return valor
+});
+
+const nomes =pessoa.forEach(p => p.nome.length > 5 ? console.log(p.nome) : false);
+
+const idades = pessoa.forEach(i => i.idade > 50 ? console.log(i.idade) : false);
+
+const terminaA = pessoa.forEach(a => a.nome.slice(-1) === 'a' ? console.log(`${a.nome} termina com 'A'`) : false);
+
+console.log(nomes);
+console.log(idades);
+console.log(terminaA)
+
