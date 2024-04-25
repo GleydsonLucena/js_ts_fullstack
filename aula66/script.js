@@ -15,10 +15,7 @@ const pessoas = [
 
 const nomes = pessoas.map( value => value.nome);
 
-const removerNome = pessoas.map( value => {
-    delete value['nome']
-    return value
-});
+const removerNome = pessoas.map( value => ({idade : value.idade}));
 
 console.log(removerNome);
 
