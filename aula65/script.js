@@ -25,17 +25,26 @@ const pessoas = [
     { nome: 'Wallace', idade: 47 }
 ]
 
-const pessoa = pessoas.filter(valor => {
-    return valor
-});
+const nomesMaior = pessoas.filter(objeto => objeto.nome.length >= 5);
 
-const nomes =pessoa.forEach(p => p.nome.length > 5 ? console.log(p.nome) : false);
+const idadeMaior = pessoas.filter(objeto => objeto.idade > 50);
 
-const idades = pessoa.forEach(i => i.idade > 50 ? console.log(i.idade) : false);
+const terminaComA = pessoas.filter(objeto => objeto.nome.slice(-1) === 'a');
 
-const terminaA = pessoa.forEach(a => a.nome.slice(-1) === 'a' ? console.log(`${a.nome} termina com 'A'`) : false);
+console.log('Nomes maiores que 5')
+console.log(nomesMaior)
+console.log('Idade maiores que 50')
+console.log(idadeMaior)
+console.log('Nomes que termina com "a"')
+console.log(terminaComA)
 
-console.log(nomes);
-console.log(idades);
-console.log(terminaA)
+// const nomes =pessoa.forEach(p => p.nome.length >= 5 ? console.log(p.nome) : false);
+
+// const idades = pessoa.forEach(i => i.idade > 50 ? console.log(i.idade) : false);
+
+// const terminaA = pessoa.forEach(a => a.nome.slice(-1) === 'a' ? console.log(`${a.nome} termina com 'A'`) : false);
+
+// console.log(nomes);
+// console.log(idades);
+// console.log(terminaA)
 
