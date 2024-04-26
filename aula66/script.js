@@ -26,7 +26,11 @@ function numRandom(min = 1000, max = 3000) {
     return rand
 }
 
-const addID = pessoas.map(obj => ({ id: numRandom(), nome: obj.nome, idade: obj.idade }));
+const addID = pessoas.map(obj => {
+    const newObj = {...obj};
+
+    return { id: numRandom(), nome: newObj.nome, idade: newObj.idade }; 
+});
 
 console.log(addID)
 console.log(pessoas)
