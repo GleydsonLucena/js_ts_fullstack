@@ -1,11 +1,16 @@
 const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
 
-const soma = numeros.reduce((acumulador, valor, indice, array) => {
-    
-    return acumulador += valor
-}, 0)
+const soma = numeros.reduce((acumulador, valor, indice, array) => acumulador += valor, 0)
+// console.log(soma)
 
-console.log(soma)
+const pares = numeros.filter((acumulador, valor) => {
+    if(valor % 2 === 0) {
+        acumulador += valor;
+    }
+    return acumulador
+}, 0);
+
+// console.log(pares)
 
 const pessoas = [
     { nome: 'Luiz', idade: 62 },
@@ -16,7 +21,10 @@ const pessoas = [
     { nome: 'Wallace', idade: 47 }
 ]
 
+const maisVelha = pessoas.reduce((acumulador, valor) => {
+   return acumulador; 
+}, 0)
 
-
+console.log(maisVelha);
 
 
