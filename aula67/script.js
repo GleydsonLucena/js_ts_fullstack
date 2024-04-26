@@ -26,7 +26,7 @@ const maisVelha = pessoas.reduce((acumulador, valor) => {
     return valor;
 })
 
-console.log(maisVelha)
+// console.log(maisVelha)
 
 
 
