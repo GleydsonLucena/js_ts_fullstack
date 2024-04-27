@@ -7,14 +7,15 @@ const array = new Array(1, 2, 3, 4, 5, 6);
 const pessoa1 = new Object();
 pessoa1.nome = 'Gleydson';
 pessoa1.sobrenome = 'Lucena';
+pessoa1.idade = 1;
+pessoa1.falarNome = function() {console.log(this.nome)};
+pessoa1.dataDeNasc = function() {
+    const dataAtual = new Date().getFullYear();
+    return dataAtual - this.idade;
+}
 
-const pessoa2 = new Object();
-pessoa2.nome = 'Luiz';
-pessoa2.sobrenome = 'Otavio';
 
-console.log(pessoa1);
-console.log(pessoa2);
 
-delete pessoa1.nome;
+pessoa1.falarNome()
+console.log(pessoa1.dataDeNasc())
 
-console.log(pessoa1);
