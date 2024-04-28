@@ -33,8 +33,6 @@ function criaPessoa(nome, sobrenome) {
     }
 };
 
-const p1 = criaPessoa('Gleydson', 'Lucena');
-
 // Constructor functions
 
 function Pessoa(nome, sobrenome) {
@@ -44,9 +42,7 @@ function Pessoa(nome, sobrenome) {
 
 //{} <= i this = objeto
 
-const cP1 = new Pessoa('Gleydson', 'Lucena');
-const cP2 = new Pessoa('Maria', 'Carla');
+const p1 = new Pessoa('Gleydson', 'Lucena');
 
-console.log(cP1);
-console.log(cP2);
+
 
