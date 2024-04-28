@@ -26,10 +26,27 @@ for (chave in pessoa1) {
 function criaPessoa(nome, sobrenome) {
     return {
         nome,
-        sobrenome
+        sobrenome,
+        get falarNome(){
+            return `${this.nome} ${this.sobrenome}`
+        }
     }
 };
 
 const p1 = criaPessoa('Gleydson', 'Lucena');
 
-console.log(p1);
+// Constructor functions
+
+function Pessoa(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+}
+
+//{} <= i this = objeto
+
+const cP1 = new Pessoa('Gleydson', 'Lucena');
+const cP2 = new Pessoa('Maria', 'Carla');
+
+console.log(cP1);
+console.log(cP2);
+
