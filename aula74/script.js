@@ -7,7 +7,6 @@ Protótipo é o termo usado para se referir ao que foi criado pela primeira vez,
 todos os objetos tem uma referência interna para um protótipo (_proto_) que vem da propriedade prototype da função contrutora que foi usada para criá-lo. Quando o tentamos acessar um membro no próprio objeto, primeiro o motor do JS vai tentar encontrar este membro e demais a cadeia de proótipos .
 */
 
-
 // Contrutora = Molde (classe)
 function Pessoa (nome, sobrenome) {
     this.nome = nome;
@@ -18,5 +17,9 @@ function Pessoa (nome, sobrenome) {
 
 // Intância
 const p1 = new Pessoa('Gleydson', 'Lucena');
+const p2 = new Pessoa('Maria', 'Lucena');
+const data = new Date();
+
+Pessoa.prototype.estouAqui = 'HAHAHAHHA'
 
 console.log(p1);
