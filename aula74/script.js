@@ -11,7 +11,6 @@ todos os objetos tem uma referência interna para um protótipo (_proto_) que ve
 function Pessoa (nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
-    this.nomeCompleto = () => this.nome + ' ' + this.sobrenome;
 }
 
 
@@ -20,6 +19,8 @@ const p1 = new Pessoa('Gleydson', 'Lucena');
 const p2 = new Pessoa('Maria', 'Lucena');
 const data = new Date();
 
-Pessoa.prototype.estouAqui = 'HAHAHAHHA'
+Pessoa.prototype.nomeCompleto = function() {return this.nome + ' ' + this.sobrenome;}
+
 
 console.log(p1);
+console.log(p2.nomeCompleto());
