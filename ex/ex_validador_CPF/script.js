@@ -9,4 +9,12 @@
 */
 
 const cpf = '705.484.450';
-console.log(cpf)
+const cpfLimpo = cpf.replace(/\D+/g, '');
+
+const multiplicadores = [10, 9, 8, 7, 6, 5, 4, 3, 2];
+
+for (let i in cpfLimpo) {
+    console.log();
+}
+
+console.log();
