@@ -13,7 +13,7 @@ function ValidadorCPF(cpf) {
     this.cpfLimpo = this.cpf.replace(/\D+/g, '');
     
     this.cpfEmArray = () => {
-        const arrayCpf = Array.from(cpfLimpo);
+        const arrayCpf = Array.from(this.cpfLimpo);
         
         return arrayCpf;
     }
@@ -33,10 +33,29 @@ function ValidadorCPF(cpf) {
 
     this.primeiroDigito = () => 11 - (this.soma() % 11);
 
-    
+    this.multiplicaçãoSegundo = () => {
+        const pd = this.primeiroDigito();
+        const arrayDoCPF = [...this.cpfEmArray(), pd.toString()];
+        let maxMulti = 11;
+        let arrayMulti = [];
+        for (let i of arrayDoCPF){
+            arrayMulti.push(i*maxMulti);
+            maxMulti--
+        }
+        return arrayMulti;
+    }
+
+    this.somaSegundo = () => this.multiplicaçãoSegundo().reduce((ac, valor) => ac += Number(valor), 0);
+
+    this.segundoDigito = () => 11 - (this.somaSegundo() % 11);
 
 }
 
-const validador = new ValidadorCPF('705.484.450');
+const primeiroD = new ValidadorCPF('705.484.450-');
+const primeiroDigito = primeiroD.primeiroDigito();
+const segundoD = new ValidadorCPF('705.484.450-' + primeiroDigito);
+const segundoDigito = primeiroD.segundoDigito();
 
-console.log(typeof validador.cpfLimpo)
+
+const cpf = '705.484.450-' + primeiroDigito + segundoDigito;
+console.log(cpf);
