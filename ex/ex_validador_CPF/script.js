@@ -81,4 +81,4 @@ const segundoDigito = validador.segundoDigito();
 const cpf1 = txtCpf1 + primeiroDigito + segundoDigito;
 const cpf2 = txtCpf2 + primeiroDigito + segundoDigito;
 
-console.log(validador.valida());
+// console.log(validador.valida());
