@@ -8,13 +8,35 @@
 
 */
 
-const cpf = '705.484.450';
-const cpfLimpo = cpf.replace(/\D+/g, '');
+function ValidadorCPF(cpf) {
+    this.cpf = cpf,
+    this.cpfLimpo = this.cpf.replace(/\D+/g, '');
+    
+    this.cpfEmArray = () => {
+        const arrayCpf = Array.from(cpfLimpo);
+        
+        return arrayCpf;
+    }
 
-const multiplicadores = [10, 9, 8, 7, 6, 5, 4, 3, 2];
+    this.multiplicação = () => {
+        const arrayDoCPF = this.cpfEmArray();
+        let maxMulti = 10;
+        let arrayMulti = [];
+        for (let i of arrayDoCPF){
+            arrayMulti.push(i*maxMulti);
+            maxMulti--
+        }
+        return arrayMulti;
+    }
 
-for (let i in cpfLimpo) {
-    console.log();
+    this.soma = () => this.multiplicação().reduce((ac, valor) => ac += Number(valor), 0);
+
+    this.primeiroDigito = () => 11 - (this.soma() % 11);
+
+    
+
 }
 
-console.log();
+const validador = new ValidadorCPF('705.484.450');
+
+console.log(typeof validador.cpfLimpo)
