@@ -9,53 +9,76 @@
 */
 
 function ValidadorCPF(cpf) {
-    this.cpf = cpf,
+    this.cpf = cpf;
+
     this.cpfLimpo = this.cpf.replace(/\D+/g, '');
-    
+
     this.cpfEmArray = () => {
         const arrayCpf = Array.from(this.cpfLimpo);
-        
+
         return arrayCpf;
-    }
+    };
 
     this.multiplicação = () => {
         const arrayDoCPF = this.cpfEmArray();
         let maxMulti = 10;
         let arrayMulti = [];
-        for (let i of arrayDoCPF){
-            arrayMulti.push(i*maxMulti);
+        for (let i of arrayDoCPF) {
+            arrayMulti.push(i * maxMulti);
             maxMulti--
         }
         return arrayMulti;
-    }
+    };
 
     this.soma = () => this.multiplicação().reduce((ac, valor) => ac += Number(valor), 0);
 
-    this.primeiroDigito = () => 11 - (this.soma() % 11);
+    this.primeiroDigito = () => {
+        let calc = 11 - (this.soma() % 11);
+        if (calc > 9) {
+            return 0;
+        }
+        return calc
+    };
 
     this.multiplicaçãoSegundo = () => {
         const pd = this.primeiroDigito();
         const arrayDoCPF = [...this.cpfEmArray(), pd.toString()];
         let maxMulti = 11;
         let arrayMulti = [];
-        for (let i of arrayDoCPF){
-            arrayMulti.push(i*maxMulti);
+        for (let i of arrayDoCPF) {
+            arrayMulti.push(i * maxMulti);
             maxMulti--
         }
         return arrayMulti;
-    }
+    };
 
     this.somaSegundo = () => this.multiplicaçãoSegundo().reduce((ac, valor) => ac += Number(valor), 0);
 
-    this.segundoDigito = () => 11 - (this.somaSegundo() % 11);
-
+    this.segundoDigito = () => {
+        let calc = 11 - (this.somaSegundo() % 11);
+        if (calc > 9) {
+            return 0;
+        }
+        return calc
+    };
 }
 
-const primeiroD = new ValidadorCPF('705.484.450-');
-const primeiroDigito = primeiroD.primeiroDigito();
-const segundoD = new ValidadorCPF('705.484.450-' + primeiroDigito);
-const segundoDigito = primeiroD.segundoDigito();
+ValidadorCPF.prototype.valida = function () {
+    if (typeof this.cpfLimpo === 'undefined') return false;
+    if (typeof this.cpfLimpo !== 11) return false;
+    return true
+}
+
+const txtCpf1 = '705.484.450-';
+const txtCpf2 = '070.987.720-';
+const txtCpf3 = '053.847.720-26';
+
+const validador = new ValidadorCPF(txtCpf3);
+const primeiroDigito = validador.primeiroDigito();
+const segundoDigito = validador.segundoDigito();
 
 
-const cpf = '705.484.450-' + primeiroDigito + segundoDigito;
-console.log(cpf);
+const cpf1 = txtCpf1 + primeiroDigito + segundoDigito;
+const cpf2 = txtCpf2 + primeiroDigito + segundoDigito;
+
+console.log(validador.valida());
