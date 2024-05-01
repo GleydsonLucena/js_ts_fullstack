@@ -36,7 +36,7 @@ CpfValidator.prototype.valid = function () {
     const digitOne = this.CreateDigit(cpfPartial);
     const digitTwo = this.CreateDigit(cpfPartial + digitOne);
     const newCpf = cpfPartial + digitOne + digitTwo;
-    return newCpf === this.cpfClean;
+    return newCpf === this.cpfClean ? 'Válido' : 'Inválido';
 }
 
 CpfValidator.prototype.CreateDigit =
@@ -59,29 +59,28 @@ CpfValidator.prototype.isSequence = function () {
     return sequence === this.cpfClean;
 }
 
-
-
 // FUNÇÕES SEPARADAS
 
 const appendValidation=(cpf, validator)=> {
-    const cpfInformed = document.querySelector('.cpf-informed');
-    const result = document.querySelector('.result');
+    const cpfInformed = document.querySelector('#cpf-informed');
+    const result = document.querySelector('#result');
 
-    
+    cpfInformed.innerHTML = cpf;
+    result.innerHTML = validator;
 }
 
 document.addEventListener('click', 
 e => {
     const el = e.target;
      
-    if(el.classList.contains('btn')){
+    if(el.classList.contains('btn')) {
         if (!txtCpf) alert('Digite o CPF!')
         if (this.cpfClean > 11) alert('Digite um CPF válido!')
 
         const cpf = document.querySelector('#txtCpf').value;
         const validator = new CpfValidator(cpf);
 
-        appendValidation(cpf, validator.valid())
+        appendValidation(cpf, validator.valid());
     };
 });
 
