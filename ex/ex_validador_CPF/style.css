@@ -1,0 +1,106 @@
+:root {
+    --fontePadrao: Verdana, Geneva, Tahoma, sans-serif;
+
+    --cor1: #FFFFFF;
+    --cor2: #605DFF;
+    --cor3: #1C2035;
+    --cor4: #5DA4FF;
+    --cor5: #A662F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontePadrao);
+    box-sizing: border-box;
+}
+
+body, html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor5))
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid var(--cor5);
+    box-shadow: 0 0 10px var(--cor5);
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--cor1);
+}
+
+.main-container h1 {
+    margin-bottom: 20px;
+}
+
+.caixa {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#txtCpf {
+    border: 1px solid var(--cor4);
+    border-radius: 15px;
+}
+
+#txtCpf:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px var(--cor5);
+}
+
+/* .btn {
+    background-image: linear-gradient(to left, var(--cor5) 20%, var(--cor4));
+    border: none;
+    padding: 13px;
+    font-size: 1.2rem;
+    font: 900 1.2rem Verdana;
+    color: var(--cor1);
+} */
+
+.btn {
+    background-image: linear-gradient(to left, var(--cor5) 20%, var(--cor4));    border: none;
+    color: #fff;
+    text-align: center;
+    font: 900 1.2rem Verdana;
+    padding: 13px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font: 900 1.2rem Verdana;
+  }
+  
+  .btn{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  
+  .btn:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+
+
+
