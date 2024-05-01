@@ -10,10 +10,15 @@
 
 <body>
     <main class="main-container">
-        <h1>Validador de CPF</h1>
-        
-        <input class="caixa" type="text" name="cpf" id="txtCpf" placeholder="Digite seu CPF aqui">
-        <button class="caixa btn" type="button">Validar</button>
+        <section class="container">
+            <h1>Validador de CPF</h1>
+            
+            <input class="caixa" type="text" name="cpf" id="txtCpf" placeholder="Digite seu CPF aqui" pattern="">
+            <button class="caixa btn" type="button">Validar</button>
+        </section>
+        <section class="container-result">
+            <p>O CPF: <span id="cpf-informed">06957387127</span> é <span id="result">valido</span>.</p>
+        </section>
     </main>
     <script src="script2.js"></script>
 </body>

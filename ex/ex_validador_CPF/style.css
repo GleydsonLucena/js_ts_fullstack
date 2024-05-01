@@ -26,9 +26,6 @@ body, html{
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
     border: 2px solid var(--cor5);
     box-shadow: 0 0 10px var(--cor5);
     padding: 30px;
@@ -36,7 +33,15 @@ body, html{
     background-color: var(--cor1);
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .main-container h1 {
+    color: var(--cor3);
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
@@ -102,5 +107,16 @@ body, html{
     right: 10px;
   }
 
+  .container-result {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 15px;
+    color: var(--cor3);
+  }
+
+  span {
+    color: var(--cor2);
+  }
 
 
