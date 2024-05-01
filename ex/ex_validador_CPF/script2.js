@@ -66,7 +66,7 @@ const appendValidation=(cpf, validator)=> {
     const result = document.querySelector('#result');
 
     cpfInformed.innerHTML = 'O CPF: ' + cpf;
-    result.innerHTML = 'é ' + validator + '.';
+    result.innerHTML = ' é ' + validator + '.';
 }
 
 document.addEventListener('click', 
@@ -74,7 +74,6 @@ e => {
     const el = e.target;
      
     if(el.classList.contains('btn')) {
-        if (!el) document.querySelector('#parag').innerHTML = ''
         if (!txtCpf) alert('Digite o CPF!')
         if (this.cpfClean > 11) alert('Digite um CPF válido!')
 

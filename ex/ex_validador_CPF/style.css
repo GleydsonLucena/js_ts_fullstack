@@ -103,10 +103,14 @@ body, html{
     font-size: 1.5rem;
     font-weight: 600;
     padding-top: 15px;
-    color: var(--cor3);
   }
 
-  span {
+  #parag {
+    color: var(--cor5);
+  }
+  
+
+  #cpf-informed, #result {
     color: var(--cor2);
   }
 
