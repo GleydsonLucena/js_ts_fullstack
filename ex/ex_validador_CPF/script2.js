@@ -74,6 +74,7 @@ e => {
     const el = e.target;
      
     if(el.classList.contains('btn')) {
+        if (!el) document.querySelector('#parag').innerHTML = ''
         if (!txtCpf) alert('Digite o CPF!')
         if (this.cpfClean > 11) alert('Digite um CPF válido!')
 

@@ -61,15 +61,6 @@ body, html{
     box-shadow: 0px 0px 10px var(--cor5);
 }
 
-/* .btn {
-    background-image: linear-gradient(to left, var(--cor5) 20%, var(--cor4));
-    border: none;
-    padding: 13px;
-    font-size: 1.2rem;
-    font: 900 1.2rem Verdana;
-    color: var(--cor1);
-} */
-
 .btn {
     background-image: linear-gradient(to left, var(--cor5) 20%, var(--cor4));    border: none;
     color: #fff;
