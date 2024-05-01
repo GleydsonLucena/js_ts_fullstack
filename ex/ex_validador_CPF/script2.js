@@ -65,8 +65,8 @@ const appendValidation=(cpf, validator)=> {
     const cpfInformed = document.querySelector('#cpf-informed');
     const result = document.querySelector('#result');
 
-    cpfInformed.innerHTML = cpf;
-    result.innerHTML = validator;
+    cpfInformed.innerHTML = 'O CPF: ' + cpf;
+    result.innerHTML = 'é ' + validator + '.';
 }
 
 document.addEventListener('click', 
