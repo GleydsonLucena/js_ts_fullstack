@@ -14,8 +14,6 @@ se o número digitado for 9, consideramos 0.
 
 11 - (284 % 11) = 2 (segundo digito)
 se o número digitado for 9, consideramos 0.
-
-/^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}/
 */
 
 function CpfValidator(cpf) {
@@ -65,8 +63,8 @@ const appendValidation=(cpf, validator)=> {
     const cpfInformed = document.querySelector('#cpf-informed');
     const result = document.querySelector('#result');
 
-    cpfInformed.innerHTML = 'O CPF: ' + cpf;
-    result.innerHTML = ' é ' + validator + '.';
+    cpfInformed.innerHTML = `O CPF: ${cpf}`;
+    result.innerHTML = ` é  ${validator}.`;
 }
 
 document.addEventListener('click', 
