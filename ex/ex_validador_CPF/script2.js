@@ -21,7 +21,7 @@ function CpfValidator(cpf) {
         enumerable: true,
         get: function () {
             return cpf.replace(/\D+/g, '');
-        
+        }
     });
 }
 
