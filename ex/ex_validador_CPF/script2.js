@@ -22,7 +22,7 @@ function CpfValidator(cpf) {
         get: function () {
             return cpf.replace(/\D+/g, '');
         }
-    });
+    // });
 }
 
 CpfValidator.prototype.valid = function () {
