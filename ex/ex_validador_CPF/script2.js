@@ -10,7 +10,7 @@ se o número digitado for 9, consideramos 0.
 
 7x 0x 5x 4x 8x 4x 4x 5x 0x 5x
 11 10 9  8  7  6  5  4  3  2 
-// 77 0  45 32 56 24 20 20 0  10 = 284
+77 0  45 32 56 24 20 20 0  10 = 284
 
 11 - (284 % 11) = 2 (segundo digito)
 se o número digitado for 9, consideramos 0.
