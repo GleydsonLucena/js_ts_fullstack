@@ -18,7 +18,7 @@ se o número digitado for 9, consideramos 0.
 
 function CpfValidator(cpf) {
     Object.defineProperty(this, 'cpfClean', {
-        // enumerable: true,
+        enumerable: true,
         get: function () {
             return cpf.replace(/\D+/g, '');
         }
