@@ -32,11 +32,11 @@ Object.defineProperty(this, 'estoque', {
     },
     set: function(valor) {
         if (typeof valor !== 'number') return;
-        // estoque = valor;
+        estoque = valor;
     }
 })
 
-// const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
+const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
 caneca.aumento(100);
 caneca.estoque = '100';
 
