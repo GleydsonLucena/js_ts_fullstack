@@ -32,7 +32,7 @@ Object.defineProperty(this, 'estoque', {
     },
     set: function(valor) {
         if (typeof valor !== 'number') return;
-        estoque = valor;
+        // estoque = valor;
     }
 })
 
