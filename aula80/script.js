@@ -11,9 +11,19 @@ class Pessoa {
     beber() { console.log(`${this.nome} está bebendo!`)}
 }
 
-const p1 = new Pessoa('Gleydson', 'Lucena');
-const p2 = new Pessoa('mARIA', 'Lucena');
-const p3 = new Pessoa('Joao', 'Lucena');
-const p4 = new Pessoa('Joana', 'Lucena');
 
-console.log(p1, p2, p3, p4)
+function Pessoa2 (nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+}
+
+Pessoa2.prototype.falar= function() {
+    console.log('Falou')
+}
+
+
+const p1 = new Pessoa('Gleydson', 'Lucena');
+const p2 = new Pessoa2('Maria', 'Lucena');
+
+
+console.log(p1, p2)
