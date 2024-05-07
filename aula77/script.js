@@ -40,5 +40,5 @@ const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
 caneca.aumento(100);
 caneca.estoque = '100';
 
-console.log(caneca)
+// console.log(caneca)
 
