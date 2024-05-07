@@ -26,7 +26,7 @@ Caneca.prototype.constructor = Caneca;
 
 Object.defineProperty(this, 'estoque', {
     enumerable: true,
-    configurable: true, 
+    configurable: true,
     get: function () {
         return estoque
     },
@@ -36,7 +36,7 @@ Object.defineProperty(this, 'estoque', {
     }
 })
 
-const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
+// const caneca = new Caneca('Caneca', 13, 'Plástico', 5);
 caneca.aumento(100);
 caneca.estoque = '100';
 
