@@ -9,4 +9,6 @@ for(const {id, nome} of pessoas){
     novasPessoas.set(id, {...{id, nome}});
 };
 
-console.log(novasPessoas)
+for (const p of novasPessoas) {
+    console.log(p)
+}
