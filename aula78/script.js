@@ -28,7 +28,7 @@ function ContaCorrente(agencia, conta, saldo, limite) {
     this.limite = limite;
 }
 
-ContaCorrente.prototype = Object.create(Conta.prototype)
+ContaCorrente.prototype = Object.create(Conta.prototype);
 ContaCorrente.prototype.constructor = ContaCorrente;
 
 ContaCorrente.prototype.sacar = function (valor) {
@@ -40,7 +40,28 @@ ContaCorrente.prototype.sacar = function (valor) {
     this.verSaldo();
 }
 
+function ContaPoupança(agencia, conta, saldo) {
+    ContaCorrente.call(this, agencia, conta, saldo);
+}
+
+ContaPoupança.prototype = Object.create(ContaCorrente.prototype);
+ContaPoupança.prototype.constructor = ContaPoupança;
+
+
+
 const cc = new ContaCorrente(11, 22, 0, 100);
 
 cc.depositar(10);
-cc.sacar(111)
+cc.sacar(110);
+cc.sacar(1);
+
+console.log('##########')
+
+const cp = new ContaCorrente(12, 33, 0);
+
+cp.depositar(10);
+cp.sacar(10);
+cp.sacar(1);
+
+
+
