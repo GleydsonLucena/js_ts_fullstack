@@ -18,5 +18,7 @@ function criaPessoa(nome, sobrenome) {
 };
 
 const p1 = criaPessoa('Gleydson', 'Lucena');
+const p2 = criaPessoa('Maria', 'KAike');
 
 console.log(p1);
+console.log(p2);
