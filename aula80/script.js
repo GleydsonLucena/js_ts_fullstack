@@ -9,6 +9,5 @@ for(const {id, nome} of pessoas){
     novasPessoas.set(id, {...{id, nome}});
 };
 
-for (const p of novasPessoas) {
-    console.log(p)
-}
+novasPessoas.delete(2)
+console.log(novasPessoas)
