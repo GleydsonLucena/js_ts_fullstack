@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Modelo</title>
+    <title>Validação de formulário</title>
 </head>
 
 <body>
@@ -13,32 +13,38 @@
     <main class="main-container">
 
         <section class="info-container">
-            <h1>Lorem ipsum dolor sit, amet.</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, nihil! Eius suscipit quos culpa
-                natus provident odio blanditiis sunt recusandae accusamus ipsum maiores fuga, dignissimos magni amet.
-                Fugiat, dicta dolor.
+            <h1>FORMULÁRIO DE CADASTRO</h1>
+
             </p>
         </section>
         <section class="form-container">
-            <label for="teste-1">Label teste 1</label>
-            <input class="caixa-form" type="text" id="teste-1" placeholder="Text">
+            <form class="form" action="#">
+                <label for="teste-1">Nome</label>
+                <input class="caixa-form" type="text" id="teste-1" placeholder="Nome:" required>
 
-            <label for="teste-2">Label teste 2</label>
-            <input class="caixa-form" type="password" id="teste-2" placeholder="Password">
+                <label for="teste-2">Sobrenome</label>
+                <input class="caixa-form" type="text" id="teste-2" placeholder="Sobrenome:" required>
 
-            <label for="teste-3">Label teste 3</label>
-            <input class="caixa-form" type="email" id="teste-3" placeholder="Email">
+                <!-- <label for="teste-3">CPF</label>
+                <input class="caixa-form" type="text" id="teste-3" placeholder="CPF:"> -->
 
-            <label for="teste-4">Label teste 4</label>
-            <input class="caixa-form" type="number" id="teste-4" placeholder="Number">
+                <label for="teste-4">Usuário</label>
+                <input class="caixa-form" type="text" id="teste-4" placeholder="Usuário:" required>
 
-            <button class="caixa-form">Enviar ></button>
+                <!-- <label for="teste-4">Senha 1</label>
+                <input class="caixa-form" type="password" id="teste-4" placeholder="Senha:" required>
+
+                <label for="teste-4">Senha 2</label>
+                <input class="caixa-form" type="password" id="teste-4" placeholder="Repetir senha:" required> -->
+
+                <button class="caixa-form btn">Enviar ></button>
+            </form>
         </section>
 
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/validator-cpf.js"></script>
 </body>
 
 </html>
