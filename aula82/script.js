@@ -5,17 +5,17 @@ class DispositivoEletronico {
     }
 
     ligar() {
-        if(this.ligado) {
-            console.log(`${this.ligado} já ligado.`);
+        if (this.ligado) {
+            console.log(`${this.nome} já ligado.`);
             return;
         }
 
         this.ligado = true;
-    }    
+    }
 
     desligar() {
         if (!this.ligado) {
-            console.log(`${this.ligado} já desligado!`);
+            console.log(`${this.nome} já desligado!`);
             return;
         }
 
@@ -25,14 +25,25 @@ class DispositivoEletronico {
 
 
 class Smartphone extends DispositivoEletronico {
-    constructor (nome, cor, modelo) {
+    constructor(nome, cor, modelo) {
         super(nome);
         this.cor = cor;
         this.modelo = modelo;
     }
 };
 
-const s1 = new Smartphone('Iphone', 'preto', 'Xiomi');
-s1.ligar()
+class Computadores extends DispositivoEletronico {
+    constructor(nome, GPU, CPU, monitor, teclado, mouse) {
+        super(nome);
+        this.GPU = GPU;
+        this.CPU = CPU;
+        this.monitor = monitor;
+        this.teclado = teclado;
+        this.mouse = mouse;
+    }
+}
 
-console.log(s1)
+const p1 = new Computadores('Asus', 'RX580', 'Xeon', 'New Hero', 'Fortrek', 'Logitech');
+p1.ligar()
+p1.ligar()
+console.log(p1)
