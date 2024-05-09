@@ -18,7 +18,8 @@ se o número digitado for 9, consideramos 0.
 
 class ValidatorCPF {
     constructor(cpf) {
-        this.cpf = cpf.replace(/\D+/g, '').slice(0, -2);
+        this.cpfFull = cpf.replace(/\D+/g, '');
+        this.cpf = this.cpfFull.slice(0, -2);
     };
 
     valid() {
@@ -26,13 +27,14 @@ class ValidatorCPF {
         if (this.cpf.length !== 11) false;
         if (this.isSequence()) false;
 
-        const oneDigit = this.createDigit();
+        const oneDigit = this.createDigit(this.cpf);
         const twoDigit = this.createDigit(this.cpf + oneDigit);
-        return console.log(oneDigit, twoDigit);
+        const newCpf = this.cpf + oneDigit + twoDigit;
+        return this.cpfFull === newCpf ? 'VÁLIDO' : 'INVÁLIDO';
     };
 
-    sumArray() {
-        const arrayDoCPF = Array.from(this.cpf);
+    sumArray(cpf) {
+        const arrayDoCPF = Array.from(cpf);
         let regressive = arrayDoCPF.length + 1
         const sum = arrayDoCPF.reduce(
             (ac, value) => {
@@ -44,15 +46,14 @@ class ValidatorCPF {
     };
 
     createDigit(cpf) {
-        const digit = 11 - (this.sumArray() % 11);
-        return digit;
+        const digit = 11 - (this.sumArray(cpf) % 11);
+        return digit > 9 ? 0 : digit;
     }
 
     isSequence() {
         const sequence = this.cpf[1].repeat(this.cpf.length + 2);
         return sequence === this.cpf ? true : false;
-    };
-
+    }
 }
 
 const v = new ValidatorCPF('705.484.450-52')
