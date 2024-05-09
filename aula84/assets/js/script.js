@@ -16,92 +16,45 @@ se o número digitado for 9, consideramos 0.
 se o número digitado for 9, consideramos 0.
 */
 
-class Validator {
+class ValidatorCPF {
     constructor(cpf) {
-        this.cpf = cpf;
-        this.cpfClean = this.cpf.replace(/\D+/g, '');
-        this.cpfPartial = this.cpfClean.slice(0, -2);
-    }
-    result = document.querySelector('.result-off');
-
-    openResult() {
-        if (this.result.style.display === 'block') return;
-        this.result.style.display = 'block';
-        setTimeout(e => {
-            this.result.style.display = 'none';
-        }, 4000);
+        this.cpf = cpf.replace(/\D+/g, '').slice(0, -2);
     };
 
-    isSequence(cpf) {
-        const sequence = this.cpfClean[0].repeat(this.cpfClean.length);
-        return sequence === this.cpfClean;
-    }
-
-    sumArray(cpfPartial) {
-        const arrayDoCPF = Array.from(cpfPartial);
-        let regressive = cpfPartial.length + 1;
-
-        const sumArray = arrayDoCPF.reduce((ac, value)=> {
-            ac += (Number(value) * regressive);
-            regressive--;
-            return ac;
-        }, 0)
-        
-        return sumArray;
-    }
-
-    createDigit(cpfPartial) {
-        const sumArray = this.sumArray(cpfPartial);
-        const digit = 11 - (sumArray % 11);
-        return digit> 9 ? 0 : digit;
-    }
-
     valid() {
-        if (typeof this.cpfPartial === undefined) {
-            alert('Digite um CPF válido!')
-            return;
-        };
-        if (this.cpfClean.length !== 11) {
-            alert('Digite um CPF válido!')
-            return;
-        };
-        if (this.isSequence()) {
-            alert('Digite um CPF válido!')
-            return;
-        };
+        if (typeof this.cpf === 'undefined') false;
+        if (this.cpf.length !== 11) false;
+        if (this.isSequence()) false;
 
-        const oneDigit = this.createDigit(this.cpfPartial);
-        const twoDigit = this.createDigit(this.cpfPartial + oneDigit)
-        const newCpf = this.cpfPartial + oneDigit + twoDigit;
+        const oneDigit = this.createDigit();
+        const twoDigit = this.createDigit(this.cpf + oneDigit);
+        return console.log(oneDigit, twoDigit);
+    };
 
-        return newCpf === this.cpfClean ? 'VÁLIDO' : 'INVÁLIDO';
+    sumArray() {
+        const arrayDoCPF = Array.from(this.cpf);
+        let regressive = arrayDoCPF.length + 1
+        const sum = arrayDoCPF.reduce(
+            (ac, value) => {
+                ac += (regressive * Number(value));
+                regressive--
+                return ac
+            }, 0)
+        return sum;
+    };
+
+    createDigit(cpf) {
+        const digit = 11 - (this.sumArray() % 11);
+        return digit;
     }
 
-    appendValidation() {
-        if (typeof this.valid() == undefined) false;
-        const spanCpf = document.querySelector('.info-cpf');
-        const spanValidator = document.querySelector('.result-cpf');
-        
-        spanCpf.innerHTML = cpfDigit.value;
-        spanValidator.innerHTML = this.valid();
-        this.openResult()
-    }
+    isSequence() {
+        const sequence = this.cpf[1].repeat(this.cpf.length + 2);
+        return sequence === this.cpf ? true : false;
+    };
 
 }
 
+const v = new ValidatorCPF('705.484.450-52')
 
-
-
-const cpfDigit = document.querySelector('#txtCpf');
-
-document.addEventListener('click',
-    e => {
-        const el = e.target;
-        const btn = el.classList.contains('btn')
-        if (btn) {
-            const valid = new Validator(cpfDigit.value);
-            valid.valid();
-            valid.appendValidation()
-        }
-    })
-
+console.log(v.valid())
