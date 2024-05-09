@@ -1,0 +1,11 @@
+
+@media (min-width: 350px) and (max-width: 768px) {
+    
+    .container>h1 {
+        font-size: 2rem;
+    }
+
+    .container > h1::after {
+        height: .2rem;
+    }
+}
