@@ -18,14 +18,26 @@ se o número digitado for 9, consideramos 0.
 
 class ValidatorCPF {
     constructor(cpf) {
-        this.cpfFull = cpf.replace(/\D+/g, '');
-        this.cpf = this.cpfFull.slice(0, -2);
+        Object.defineProperty(this, 'cpfFull', {
+                value: cpf.replace(/\D+/g, ''),
+                writable: false, 
+                enumerable: false, 
+                configurable: false
+            });
+
+        Object.defineProperty(this, 'cpf', {
+            value: this.cpfFull.slice(0, -2),
+            writable: false, 
+            enumerable: false, 
+            configurable: false
+        });
     };
 
     valid() {
-        if (typeof this.cpf === 'undefined') false;
-        if (this.cpf.length !== 11) false;
-        if (this.isSequence()) false;
+        if (!this.cpfFull) return false;
+        if (typeof this.cpfFull !== 'string') return false;
+        if (this.cpfFull.length !== 11) return false;
+        if (this.isSequence()) return false;
 
         const oneDigit = this.createDigit(this.cpf);
         const twoDigit = this.createDigit(this.cpf + oneDigit);
@@ -52,10 +64,48 @@ class ValidatorCPF {
 
     isSequence() {
         const sequence = this.cpf[1].repeat(this.cpf.length + 2);
-        return sequence === this.cpf ? true : false;
+        return sequence === this.cpfFull ? true : false;
     }
+
+    appendValidation() {
+        if (this.valid() == false) {
+            const result1 = document.querySelector('.result-off > p');
+            result1.textContent = 'Digite um CPF válido!';
+            this.openResult()
+            return;
+        };
+
+        const spanCpf = document.querySelector('.info-cpf');
+        const spanValidator = document.querySelector('.result-cpf');
+        
+        spanCpf.innerHTML = cpfDigit.value;
+        spanValidator.innerHTML = this.valid();
+        this.openResult();
+    }
+
+    result = document.querySelector('.result-off');
+
+    openResult() {
+        if (this.result.style.display === 'block') return;
+        this.result.style.display = 'block';
+        setTimeout(e => {
+            this.result.style.display = 'none';
+        }, 4000);
+    };
 }
 
-const v = new ValidatorCPF('705.484.450-52')
+const cpfDigit = document.querySelector('#txtCpf');
 
-console.log(v.valid())
+document.addEventListener('click',
+    e => {
+        const el = e.target;
+        const btn = el.classList.contains('btn')
+        if (btn) {
+            const valid = new ValidatorCPF(cpfDigit.value);
+            valid.valid();
+            valid.appendValidation();
+        }
+    })
+
+
+
