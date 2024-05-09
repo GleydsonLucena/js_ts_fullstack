@@ -5,7 +5,22 @@ class DispositivoEletronico {
     }
 
     ligar() {
-        if(this.ligado) return;
+        if(this.ligado) {
+            console.log(`${this.ligado} já ligado.`);
+            return;
+        }
+
+        this.ligado = true;
+    }    
+
+    desligar() {
+        if (!this.ligado) {
+            console.log(`${this.ligado} já desligado!`);
+            return;
+        }
+
+        this.ligado = false;
     }
-    desligar() {}
 }
+
+const d1 = new DispositivoEletronico('MotoG');
