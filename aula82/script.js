@@ -23,4 +23,16 @@ class DispositivoEletronico {
     }
 }
 
-const d1 = new DispositivoEletronico('MotoG');
+
+class Smartphone extends DispositivoEletronico {
+    constructor (nome, cor, modelo) {
+        super(nome);
+        this.cor = cor;
+        this.modelo = modelo;
+    }
+};
+
+const s1 = new Smartphone('Iphone', 'preto', 'Xiomi');
+s1.ligar()
+
+console.log(s1)
