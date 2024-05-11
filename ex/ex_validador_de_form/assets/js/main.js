@@ -30,7 +30,7 @@ class ValidatorForm {
         if (this.sobrenome.length < 3 || this.sobrenome.length > 12) return false;
         if (this.usuario.length < 3 || this.usuario.length > 12) return false;
 
-        // return true;
+        return true;
     }
 }
 
