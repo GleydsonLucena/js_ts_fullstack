@@ -1,18 +1,28 @@
 class ValidatorForm {
     constructor(nome, sobrenome, usuario) {
-        this.nome = nome; 
+        this.nome = nome;
         this.sobrenome = sobrenome;
         this.usuario = usuario;
+        
+    }
+
+    
+    regex = /\W|_/;
+    
+    criaP() {
+        const p = document.createElement('p');
+        p.classList.add('fraseErro')
+        return p;
     }
 
     validCaracter() {
-        if(this.nome.replace(/[^a-z0-9]/gi, '') !== this.nome){
-           
-            return alert('Digite um nome válido');;
-        };
-        if(this.sobrenome.replace(/[^a-z0-9]/gi, '') !== this.sobrenome) return false;
-        if(this.usuario.replace(/[^a-z0-9]/gi, '') !== this.usuario )return false;
-        return true;
+        if (this.regex.test(this.nome)) {
+            const div = document.querySelector('.div-nome');
+            const p = this.criaP();
+            p.innerText = 'Digite um nome válido (apenas letras/números)';
+            return div.appendChild(p);
+        }
+        return true
     }
 
     validMinMixCaracter() {
@@ -24,15 +34,19 @@ class ValidatorForm {
     }
 }
 
+const nometxt = document.getElementById('txtnome');
 
-document.addEventListener('click', 
+document.addEventListener('click',
 e => {
     const el = e.target;
     const btn = el.classList.contains('btn');
-    const valid = new ValidatorForm('gleydson', 'luveca', 'gleydsonCo');
-        if(btn) {
-            valid.validCaracter();
+    const valid = new ValidatorForm(nometxt.value, 'lucena', 'guimaraes');
+    if (btn) {
+        valid.validCaracter();
+        
         }
-
     }
 )
+
+
+
