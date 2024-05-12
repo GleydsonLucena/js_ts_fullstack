@@ -15,12 +15,14 @@ class ValidatorForm {
         return p;
     }
 
+    IndentDiv(classDaDiv) {return document.querySelector(`.${classDaDiv}`)}
+
     validCaracter() {
         if (this.regex.test(this.nome)) {
-            const div = document.querySelector('.div-nome');
+            
             const p = this.criaP();
             p.innerText = 'Digite um nome válido (apenas letras/números)';
-            return div.appendChild(p);
+            return this.IndentDiv();
         }
         return true
     }
@@ -36,11 +38,11 @@ class ValidatorForm {
 
 const nometxt = document.getElementById('txtnome');
 
+const valid = new ValidatorForm(nometxt.value, 'lucena', 'guimaraes');
 document.addEventListener('click',
 e => {
     const el = e.target;
     const btn = el.classList.contains('btn');
-    const valid = new ValidatorForm(nometxt.value, 'lucena', 'guimaraes');
     if (btn) {
         valid.validCaracter();
         
