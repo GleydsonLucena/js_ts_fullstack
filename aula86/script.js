@@ -5,11 +5,23 @@ function rand(min, max) {
 }
 
 function esperaAi(msg, tempo) {
-    setTimeout(e=> {
-        console.log(msg);
-    }, tempo)
-} 
+    return new Promise((resolve, reject) => {
+        setTimeout(e => {
+            resolve(msg);
+        }, tempo)
+    })
+}
 
-esperaAi('OPa 1', rand(1, 10));
-esperaAi('OPa 2', rand(1, 10));
-esperaAi('OPa 3', rand(1, 10));
+esperaAi('OPa 1', rand(1, 3))
+    .then(resposta => {
+        console.log(resposta)
+        return esperaAi('OPa 2', rand(1, 3));
+    })
+    .then(resposta => {
+        console.log(resposta)
+        return esperaAi('OPa 3', rand(1, 3))
+    }).then(resposta => {
+        console.log(resposta)
+    })
+    .catch();
+
