@@ -13,7 +13,7 @@ se o número digitado for 9, consideramos 0.
 77 0  45 32 56 24 20 20 0  10 = 284
 
 11 - (284 % 11) = 2 (segundo digito)
-se o número digitado for 9, consideramos 0.
+// se o número digitado for 9, consideramos 0.
 */
 
 function CpfValidator(cpf) {
