@@ -20,7 +20,7 @@ function CpfValidator(cpf) {
     Object.defineProperty(this, 'cpfClean', {
         enumerable: true,
         get: function () {
-            // return cpf.replace(/\D+/g, '');
+            return cpf.replace(/\D+/g, '');
         }
     });
 }
