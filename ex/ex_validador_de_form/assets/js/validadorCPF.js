@@ -66,46 +66,7 @@ class ValidatorCPF {
         const sequence = this.cpf[1].repeat(this.cpf.length + 2);
         return sequence === this.cpfFull ? true : false;
     }
-
-    appendValidation() {
-        if (this.valid() == false) {
-            const result1 = document.querySelector('.result-off > p');
-            result1.textContent = 'Digite um CPF válido!';
-            this.openResult()
-            return;
-        };
-
-        const spanCpf = document.querySelector('.info-cpf');
-        const spanValidator = document.querySelector('.result-cpf');
-        
-        spanCpf.innerHTML = cpfDigit.value;
-        spanValidator.innerHTML = this.valid();
-        this.openResult();
-    }
-
-    result = document.querySelector('.result-off');
-
-    openResult() {
-        if (this.result.style.display === 'block') return;
-        this.result.style.display = 'block';
-        setTimeout(e => {
-            this.result.style.display = 'none';
-        }, 4000);
-    };
 }
-
-const cpfDigit = document.querySelector('#txtCpf');
-
-document.addEventListener('click',
-    e => {
-        const el = e.target;
-        const btn = el.classList.contains('btn')
-        if (btn) {
-            const valid = new ValidatorCPF(cpfDigit.value);
-            valid.valid();
-            valid.appendValidation();
-        }
-    })
 
 
 
