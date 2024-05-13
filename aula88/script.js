@@ -33,6 +33,14 @@ async function executa() {
 
 };
 
+/*
+Pending - pendente
+fullField - resolvida
+reject - rejeitada
+*/
+
+
+
 executa();
 
 // esperaAi('Fase 1', rand(0, 3))
