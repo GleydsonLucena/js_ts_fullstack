@@ -12,9 +12,9 @@ document.addEventListener('click',
     }
 )
 
-async function carregaPafina(el) {
+function carregaPafina(el) {
     const href = el.getAttribute('href');
-    await fetch(href)
+    fetch(href)
         .then(resp => {
             if (resp.status !== 200) throw new Error('DEu ruim!');
             return resp.text()
@@ -30,12 +30,3 @@ function loadResult(html) {
     const div = document.querySelector('.resultado');
     div.innerHTML = html;
 }
-
-
-// fetch('pagina.html')
-//     .then(resp => {
-//         if (resp.status !== 200) throw new Error('ERRO 404 NOSSO!');
-//         return resp.text();
-//     })
-//     .then(html => console.log(html))
-//     .catch(e => console.error(e));
