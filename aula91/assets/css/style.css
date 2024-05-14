@@ -68,3 +68,7 @@ label {
 .caixa-form:focus {
     outline: .1rem solid rgb(9, 180, 180);
 }
+
+table {
+    width: 100%;
+}
