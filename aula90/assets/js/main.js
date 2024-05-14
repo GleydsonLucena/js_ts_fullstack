@@ -7,23 +7,22 @@ document.addEventListener('click',
         if (tag === 'a') {
             e.preventDefault();
             carregaPafina(el)
-            loadResult()
         }
     }
 )
 
-function carregaPafina(el) {
-    const href = el.getAttribute('href');
-    fetch(href)
-        .then(resp => {
-            if (resp.status !== 200) throw new Error('DEu ruim!');
-            return resp.text()
-                .then(html => {
-                    loadResult(html);
-                })
-        })
-        ;
-
+async function carregaPafina(el) {
+    try {
+        const href = el.getAttribute('href');
+        const resp = await fetch(href);
+    
+        if(resp.status !== 200) throw new Error();
+    
+        const html = await resp.text();
+        loadResult(html);
+    } catch (e) {
+        console.error(e)
+    }
 }
 
 function loadResult(html) {
