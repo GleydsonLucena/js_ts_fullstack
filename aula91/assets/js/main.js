@@ -1,11 +1,12 @@
-const pessoa = 'Gabriel'
-fetch('pessoas.json')
-    .then(resp => {
-        return resp.json();
-    })
-    .then(json => {
-        loadJson(json);
-    });
+// fetch('pessoas.json')
+//     .then(resp => {
+//         return resp.json();
+//     })
+//     .then(json => {
+//         loadJson(json);
+//     });
+axios('pessoas.json')
+    .then(resp => loadJson(resp.data));
 
 function loadJson(json) {
     const table = document.createElement('table');
@@ -27,11 +28,12 @@ function loadJson(json) {
         td.innerHTML = pessoa.idade;
         tr.appendChild(td);
 
-
         table.appendChild(tr)
     }
 
     divJson.appendChild(table);
 
 }
+
+
 
