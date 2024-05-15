@@ -6,16 +6,33 @@ fetch('db.json')
         loadJson(json)
     });
 
-// function loadJson(json) {
-//     const divJson = document.querySelector('.img-container');
+const divContainer = document.querySelector('.container');
+const divLivros = document.querySelector('.filme-container');
+const imgCapaLivro = document.querySelector('.img-capa');
+const infoDoLivro = document.querySelector('.info-livro');
+const titulo = document.querySelector('.titulo');
+const categoria = document.querySelector('.categoria');
+const paginas = document.querySelector('.paginas');
+const preco = document.querySelector('.preco');
 
-//     for (livro of json.livros) {
-//         const img = document.createElement('img');
-//         img.setAttribute('src', livro.imgCapa);
-//         divJson.appendChild(img);
-//     }
-// }
+function loadJson(json) {
+    for (let livro of json.livros) {
+        adicionaLivro(livro.imgCapa, livro.titulo, livro.categoria, livro.paginas, livro.preco);
+        for (let i=0; i< livro.length; i++) {
+            const seuNode = divLivros;
+            const clone = seuNode.cloneNode(true);
+            document.body.appendChild(clone);
+        }
+       
 
-// function createDiv() {
+    }
+}
 
-// }
+function adicionaLivro(imgCapa, tituloTxt, categoriaTxt, paginasTxt,precoTxt) {
+    imgCapaLivro.src = imgCapa;
+    titulo.innerHTML = tituloTxt;
+    categoria.innerHTML = categoriaTxt;
+    paginas.innerHTML = paginasTxt + ' Paginas';
+    preco.innerHTML = 'R$' + precoTxt + ',00';
+}
+
