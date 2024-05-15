@@ -95,5 +95,17 @@ body {
     font-size: 2rem;
 }
 
-.
+.btn {
+    cursor: pointer;
+    outline: none;
+    border: .1rem solid grey;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
 
