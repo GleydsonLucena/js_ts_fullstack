@@ -1,12 +1,12 @@
-// fetch('pessoas.json')
-//     .then(resp => {
-//         return resp.json();
-//     })
-//     .then(json => {
-//         loadJson(json);
-//     });
-axios('pessoas.json')
-    .then(resp => loadJson(resp.data));
+fetch('pessoas.json')
+    .then(resp => {
+        return resp.json();
+    })
+    .then(json => {
+        loadJson(json);
+    });
+// axios('pessoas.json')
+//     .then(resp => loadJson(resp.data));
 
 function loadJson(json) {
     const table = document.createElement('table');

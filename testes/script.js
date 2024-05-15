@@ -1,13 +1,21 @@
 fetch('db.json')
-    .then(resposta => {
-        return resposta.json();
+    .then(resp => {
+        return resp.json();
     })
-    .then(livrosJson => loadJsonInPag(resposta));
+    .then(json => {
+        loadJson(json)
+    });
 
+// function loadJson(json) {
+//     const divJson = document.querySelector('.img-container');
 
-function loadJsonInPag(json) {
-    const divPagina = document.querySelector('.resultado');
-    for (let livros of json) {
-        console.log(livros)
-    }
-}
+//     for (livro of json.livros) {
+//         const img = document.createElement('img');
+//         img.setAttribute('src', livro.imgCapa);
+//         divJson.appendChild(img);
+//     }
+// }
+
+// function createDiv() {
+
+// }
