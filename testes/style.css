@@ -4,28 +4,39 @@
     --cor3: #002333;
     --cor4: #159A9C;
     --cor5: #B4BEC9;
+    --fontePadrao: "Roboto", sans-serif;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--fontePadrao);
 }
 
 body {
     min-width: 100vw;
     min-height: 100vh;
+    background-color: var(--cor3);
 }
 
 .header {
     padding: 4rem;
-    color: #fff;
-    background-color: ;
+    text-align: center;
+    color: var(--cor1);
+    background-color: var(--cor4);
+}
+
+h1 {
+    font-size: 5em;
+    text-shadow: 0 0 .3rem rgba(0, 0, 0, 0.517);
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     max-width: 90rem;
     margin: 0 auto;
-    background-color: lightblue;
+    background-color: var(--cor5);
 }
