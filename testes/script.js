@@ -18,17 +18,19 @@ const preco = document.querySelector('.preco');
 function loadJson(json) {
     for (let livro of json.livros) {
         adicionaLivro(livro.imgCapa, livro.titulo, livro.categoria, livro.paginas, livro.preco);
-        for (let i=0; i< livro.length; i++) {
-            const seuNode = divLivros;
-            const clone = seuNode.cloneNode(true);
-            document.body.appendChild(clone);
-        }
-       
+
+    
+        var divPai = document.querySelector('.div-livro');
+        var div = divPai.firstChild;
+        var divClone = div.cloneNode(true);
+        divPai.appendChild(divClone);
+        
+
 
     }
 }
 
-function adicionaLivro(imgCapa, tituloTxt, categoriaTxt, paginasTxt,precoTxt) {
+function adicionaLivro(imgCapa, tituloTxt, categoriaTxt, paginasTxt, precoTxt) {
     imgCapaLivro.src = imgCapa;
     titulo.innerHTML = tituloTxt;
     categoria.innerHTML = categoriaTxt;
