@@ -1,3 +1,11 @@
+:root {
+    --cor1: #FFFFFF;
+    --cor2: #DEEFE7;
+    --cor3: #002333;
+    --cor4: #159A9C;
+    --cor5: #B4BEC9;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -10,6 +18,14 @@ body {
     min-height: 100vh;
 }
 
+.header {
+    padding: 4rem;
+    color: #fff;
+    background-color: ;
+}
+
 .container {
-    
+    max-width: 90rem;
+    margin: 0 auto;
+    background-color: lightblue;
 }
