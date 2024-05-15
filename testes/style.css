@@ -20,8 +20,17 @@ body {
     background-color: var(--cor3);
 }
 
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .header {
     padding: 4rem;
+    width: 90rem;
+    max-width: 90rem;
     text-align: center;
     color: var(--cor1);
     background-color: var(--cor4);
@@ -36,7 +45,17 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    width: 90rem;
     max-width: 90rem;
+    padding: 2rem;
     margin: 0 auto;
+    border-radius: 0 0 1rem 1rem;
     background-color: var(--cor5);
+}
+
+.filme-container {
+    padding: 1rem;
+    border: .1rem solid grey;
+    border-radius: 1rem;
+    max-width: 18rem;
 }
