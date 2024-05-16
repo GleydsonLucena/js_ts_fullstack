@@ -1,7 +1,4 @@
-const { map } = require('core-js/core/array');
 const path = require('path'); //CommonJS
-const { config } = require('process');
-const { sources } = require('webpack');
 
 
 module.exports = {
