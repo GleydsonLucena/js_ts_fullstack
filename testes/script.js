@@ -17,16 +17,14 @@ const preco = document.querySelector('.preco');
 
 function loadJson(json) {
     for (let livro of json.livros) {
+        var orig = document.querySelector('.div-livro');
+        var clone = orig.cloneNode(true);
+        divLivros.appendChild(clone);
+
         adicionaLivro(livro.imgCapa, livro.titulo, livro.categoria, livro.paginas, livro.preco);
-
-    
-        var divPai = document.querySelector('.div-livro');
-        var div = divPai.firstChild;
-        var divClone = div.cloneNode(true);
-        divPai.appendChild(divClone);
         
-
-
+            orig.style.color = 'red'
+        
     }
 }
 

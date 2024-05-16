@@ -46,6 +46,7 @@ body {
     flex-direction: column;
     justify-content: start;
     width: 90rem;
+    height: auto;
     max-width: 90rem;
     padding: 2rem;
     margin: 0 auto;
@@ -54,8 +55,13 @@ body {
 }
 
 .filme-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+   
+}
+
+.div-livro {
     padding: 1rem;
     border: .1rem solid grey;
     border-radius: 1rem;
