@@ -19,11 +19,10 @@ function loadJson(json) {
     for (let livro of json.livros) {
         var orig = document.querySelector('.div-livro');
         var clone = orig.cloneNode(true);
-        divLivros.appendChild(clone);
+        divLivros.appendChild(clon);
 
         adicionaLivro(livro.imgCapa, livro.titulo, livro.categoria, livro.paginas, livro.preco);
-        
-            orig.style.color = 'red'
+        orig.style.display = 'grid'
         
     }
 }
