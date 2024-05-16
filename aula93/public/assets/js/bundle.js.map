@@ -1,1 +1,1 @@
-{"version":3,"file":"bundle.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,QAAQ,CAAC,C","sources":["webpack://aula93/./src/index.js"],"sourcesContent":["console.log('Capeta')"],"names":["console","log"],"sourceRoot":""}
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAA,IAAMA,IAAI,GAAGC,QAAQ,CAACD,IAAI;AAC1BA,IAAI,CAACE,SAAS,GAAE,WAAW,C","sources":["webpack://aula93/./src/index.js"],"sourcesContent":["const body = document.body;\nbody.innerHTML= 'Ola mundo'"],"names":["body","document","innerHTML"],"sourceRoot":""}
