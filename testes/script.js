@@ -19,7 +19,7 @@ function loadJson(json) {
     for (let livro of json.livros) {
         var orig = document.querySelector('.div-livro');
         var clone = orig.cloneNode(true);
-        divLivros.appendChild(clon);
+        divLivros.appendChild(clone);
 
         adicionaLivro(livro.imgCapa, livro.titulo, livro.categoria, livro.paginas, livro.preco);
         orig.style.display = 'grid'
