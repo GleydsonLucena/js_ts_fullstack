@@ -1,10 +1,2 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-var body = document.body;
-body.innerHTML = 'Ola mundo';
-/******/ })()
-;
+console.log("eeeeeeeeeeeeeeiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 //# sourceMappingURL=bundle.js.map
