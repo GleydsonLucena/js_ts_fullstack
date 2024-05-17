@@ -1,6 +1,3 @@
-//sdmladadjsa
-//hdsladjad
-//djsadjadl
+import { noem, nome } from './modulo1';
 
-
-console.log('eeeeeeeeeeeeeeiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+console.log(nome)
