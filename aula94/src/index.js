@@ -1,3 +1,3 @@
-import { noem, nome } from './modulo1';
+import { nome, sobrenome, idade, soma } from './modulo1';
 
-console.log(nome)
+console.log(nome, sobrenome, idade, soma(3, 2))
