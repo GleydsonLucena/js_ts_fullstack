@@ -13,4 +13,4 @@ import * as module from './modulo1';
 
 const p1 = new module.Pessoa('Gleydson', 'Lucena');
 
-console.log(p1)
+console.log(module.soma(5, 5))
