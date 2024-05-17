@@ -47,3 +47,4 @@ const p1 = new Computadores('Asus', 'RX580', 'Xeon', 'New Hero', 'Fortrek', 'Log
 p1.ligar()
 p1.ligar()
 console.log(p1)
+const frase = 'Minha frase teste'
