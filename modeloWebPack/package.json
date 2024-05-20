@@ -1,10 +1,10 @@
 {
-  "name": "aula93",
+  "name": "modeloWebPack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "loadweb": "webpack -w"
+    "dev": "webpack -w"
   },
   "keywords": [],
   "author": "Gleydson",
