@@ -2,9 +2,9 @@ export default class ValidatorCPF {
     constructor(cpf) {
         Object.defineProperty(this, 'cpfFull', {
                 value: cpf.replace(/\D+/g, ''),
-                writable: false, 
-                enumerable: false, 
-                configurable: false
+                writable: true, 
+                enumerable: true, 
+                configurable: true
             });
 
         Object.defineProperty(this, 'cpf', {
@@ -67,7 +67,6 @@ export default class ValidatorCPF {
     };
 }
 
-console.log('Chegeui auqi')
 
 
 
