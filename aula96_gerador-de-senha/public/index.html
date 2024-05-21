@@ -10,15 +10,36 @@
 <body>
 
     <main class="main-container">
+        <h1>Gerador de senha</h1>
+        <div class="senha-resultado">
+            
+        </div>
 
-        <section class="info-container">
-            <h1>Lorem ipsum dolor sit, amet.</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, nihil! Eius suscipit quos culpa
-                natus provident odio blanditiis sunt recusandae accusamus ipsum maiores fuga, dignissimos magni amet.
-                Fugiat, dicta dolor.
-            </p>
-        </section>
+        
+        
+        <form action="/" class="form">
+            <div>
+                <input type="text" id="qnt-caracters" size="4">
+                <label for="qnt-caracters">Quantidade de caracters </label>
+            </div>
+            <div>
+                <input class="check" type="checkbox" id="num" size="4">
+                <label for="num">Adicionar números </label>
+            </div>
+            <div>
+                <input class="check" type="checkbox" id="maiusculas" size="4">
+                <label for="maiusculas">Letras maiúsculas </label>
+            </div>
+            <div>
+                <input class="check" type="checkbox" id="minusculas" size="4">
+                <label for="minusculas">Letras minúsculas </label>
+            </div>
+            <div>
+                <input class="check" type="checkbox" id="simbolos" size="4">
+                <label for="simbolos"> Letras símbolos </label>
+            </div>
+            <button class="btn" type="submit">Gerar senha</button>
+        </form>
 
 
     </main>
