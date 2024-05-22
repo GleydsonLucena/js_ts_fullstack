@@ -1,5 +1,7 @@
-const { Pessoa } = require('./mod1');
+const axios = require('axios');
 
-const p1 = new Pessoa('Gleydson');
+axios('https://wwww.otaviomiranda.com.br/files/json/pessoas.json')
+    .then(response => console.log(response.data))
+    .catch(e => console.log(e));
 
-console.log(p1);
+
