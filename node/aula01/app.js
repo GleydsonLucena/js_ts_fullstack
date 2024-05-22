@@ -1,3 +1,5 @@
-const mod = require('./mod1')
+const { Pessoa } = require('./mod1');
 
-console.log(mod.opa());
+const p1 = new Pessoa('Gleydson');
+
+console.log(p1);
