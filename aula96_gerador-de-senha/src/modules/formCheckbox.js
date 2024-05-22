@@ -9,3 +9,5 @@ export const num = document.querySelector('#num');
 export const maiuscula = document.querySelector('#maiusculas');
 export const minuscula = document.querySelector('#minusculas');
 export const simbolos = document.querySelector('#simbolos');
+
+export const btn = document.querySelector('.btn');

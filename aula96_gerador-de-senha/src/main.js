@@ -1,10 +1,7 @@
 import './assets/css/style.css';
 
-import { qnt, num, maiuscula, minuscula, simbolos } from './modules/formCheckbox';
+import { qnt, num, maiuscula, minuscula, simbolos, btn } from './modules/formCheckbox';
 import geraSenha from './modules/geradores';
-
-
-const btn = document.querySelector('.btn');
 
 btn.addEventListener('click',
     e => {
