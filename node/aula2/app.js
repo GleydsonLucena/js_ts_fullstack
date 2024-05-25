@@ -1,3 +1,9 @@
-const multiplicacao = require('./mod');
+const cachorro = require('./mod');
 
-console.log(multiplicacao(4, 4));
+const loki = new cachorro('Loki');
+
+// loki.latir();
+
+const { latir } = cachorro;
+
+console.log(latir())
