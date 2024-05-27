@@ -1,2 +1,3 @@
-const path = require('path');
-console.log(path.resolve(__dirname, '.',  '.', 'arquivos', 'imagens'))
+const cachorro = require('./mod.js');
+
+const c1 = new cachorro('dog').latir()
