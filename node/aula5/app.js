@@ -1,19 +1,21 @@
 const path = require('path');
 const escreve = require('./modules/escrever');
 const ler = require('./modules/ler');
+const { json } = require('stream/consumers');
 
 const caminhoArquivo = path.resolve(__dirname, '..', 'teste.json');
 
 async function lerArquivo (caminho) {
     const dados = await ler(caminho);
-    return dados
+    renderizaDados(dados);
 }
 
-const dadosArquivo = lerArquivo(caminhoArquivo)
-    .then(file => console.log(file))
-    .catch(e=> console.log(e));
+function renderizaDados(file) {
+    file = JSON.parse(file);
+    file.forEach(val => console.log(val))
+}
 
-console.log(dadosArquivo)
+console.log(lerArquivo(caminhoArquivo))
 
 // const pessoas = [
 //     {nome: 'João'},
