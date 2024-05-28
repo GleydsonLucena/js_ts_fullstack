@@ -1,18 +1,6 @@
-const path = require('path');
 const fs = require('fs').promises;
 
-const caminhoArquivo = path.resolve(__dirname, '..', 'teste.json');
+module.exports = (caminho, file) => {
 
-const pessoas = {
-    nome: 'João',
-    nome: 'Maria',
-    nome: 'Luiz',
-    nome: 'Kaio',
+    fs.writeFile(caminho, file, { flag: 'a' });
 }
-
-const json = JSON.stringify(pessoas, '', 2);
-
-
-
-fs.writeFile(caminhoArquivo, json, { flag: 'a' });
-
