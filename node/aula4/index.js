@@ -4,13 +4,21 @@ const path = require('path');
 async function readdir(rootDir) {
     rootDir = rootDir || path.resolve(__dirname);
     const files = await fs.readdir(__dirname);
-    walk(files);
+    walk(files, rootDir);
 }
 
-async function walk(files) {
+async function walk(files , rootDir) {
     for (let file of files) {
-        console.log(file);
+        const fileFullPath = path.resolve(rootDir, file)
+        const stats = await fs.stat(fileFullPath);
+
+        if (stats.isDirectory()) {
+            readdir(fileFullPath);
+            continue;
+        }
+
+        console.log(fileFullPath, stats.isDirectory());
     }
 }
 
-readdir('/home/gleydson/Documentos/GitHub/');
+readdir('/home/gleydson/Documentos/GitHub/cursoJS-TS-fullstack/');
