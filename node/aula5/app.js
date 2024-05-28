@@ -17,16 +17,16 @@ function renderizaDados(file) {
 
 console.log(lerArquivo(caminhoArquivo))
 
-// const pessoas = [
-//     {nome: 'João'},
-//     {nome: 'Maria'},
-//     {nome: 'Luiz'},
-//     {nome: 'Kaio'},
-// ]
-// const json = JSON.stringify(pessoas, ' ', 2);
+const pessoas = [
+    {nome: 'João'},
+    {nome: 'Maria'},
+    {nome: 'Luiz'},
+    {nome: 'Kaio'},
+]
+const json = JSON.stringify(pessoas, ' ', 2);
 
 
-// escreve(caminhoArquivo, json);
+escreve(caminhoArquivo, json);
 
 
 
