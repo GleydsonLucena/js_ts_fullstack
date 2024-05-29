@@ -13,18 +13,21 @@ app.get('/',
         </form>
         `);
     }
-)
+);
+
+app.get('/testes/:idUsuarios?',
+    (req, res) => {
+        console.log(req.params);
+        res.send('Oi!')
+    });
 
 app.post('/',
     (req, res) => {
         res.send('Recebi o formulário!')
-    })
+    });
 
-app.get('/contato',
-    (req, res) => {
-        res.send('Obrigado por enviar!')
-    })
-app.listen(3000, () => {
-    console.log('Acessar http://localhost:3000');
-    console.log('Servidor execultando na porta 3000');
-});
+app.listen(3000,
+    () => {
+        console.log('Acessar http://localhost:3000');
+        console.log('Servidor execultando na porta 3000');
+    });

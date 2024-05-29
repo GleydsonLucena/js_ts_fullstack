@@ -10,7 +10,7 @@ app.get('/',
         </form>
         `);
     }
-)
+);
 
 app.post('/',
     (req, res) => {
