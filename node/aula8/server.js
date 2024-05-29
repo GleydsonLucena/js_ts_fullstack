@@ -4,6 +4,8 @@ const app = express();
 
 // https://meusite.com/ <-GET - > entrega a página
 
+app.use(express.urlencoded({ extended: true }))
+
 app.get('/',
     (req, res) => {
         res.send(`
@@ -15,14 +17,9 @@ app.get('/',
     }
 );
 
-app.get('/testes/:idUsuarios?',
-    (req, res) => {
-        console.log(req.params);
-        res.send('Oi!')
-    });
-
 app.post('/',
     (req, res) => {
+        console.log(req.body);
         res.send('Recebi o formulário!')
     });
 
