@@ -1,13 +1,8 @@
 const express = require('express');
 const route = express.Router();
+const homeController = require('./controllers/homeController')
 
-route.get('/',
-    (req, res) => {
-        res.send(`
-        <form action="/" method="POST">
-        Nome: <input type="text" name="nome">
-        <button>Enviar</button>
-        </form>
-        `);
-    }
-);
+route.get('/', homeController.paginaInicial);
+route.post('/', homeController.trataPost);
+
+module.exports = route;
