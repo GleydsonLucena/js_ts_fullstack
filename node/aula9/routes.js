@@ -4,5 +4,6 @@ const homeController = require('./controllers/homeController')
 
 route.get('/', homeController.paginaInicial);
 route.post('/', homeController.trataPost);
+route.get('/contato', homeController.rotaContato);
 
 module.exports = route;
