@@ -4,8 +4,9 @@ const homeController = require('./src/controllers/homeController')
 
 function meuMiddleware(req, res, next) {
     console.log();
-    console.log('Passei no seu middleWare.');
+    res.send('Passei no seu middleWare.');
     console.log();
+    next();
     
 }
 
