@@ -1,7 +1,8 @@
 
 exports.paginaInicial =
-    (req, res, next) => {
-        res.render('index')
+    (req, res) => {
+        res.render('index');
+        return;
     }
 
 exports.trataPost =
