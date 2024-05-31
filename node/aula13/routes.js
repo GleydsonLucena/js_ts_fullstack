@@ -1,6 +1,7 @@
 const express = require('express');
 const route = express.Router();
-const homeController = require('./src/controllers/homeController')
+const homeController = require('./src/controllers/homeController');
+const contatoController = require('./src/controllers/contatoController');
 
 // rotas da home
 
@@ -9,6 +10,6 @@ route.post('/', homeController.trataPost);
 
 // rotas de contato
 
-route.get('/contato', homeController.rotaContato);
+route.get('/contato', contatoController.rotaContato);
 
 module.exports = route;
