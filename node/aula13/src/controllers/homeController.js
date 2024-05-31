@@ -1,5 +1,6 @@
+
 exports.paginaInicial =
-    (req, res) => {
+    (req, res, next) => {
         res.render('index')
     }
 
