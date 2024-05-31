@@ -1,7 +1,9 @@
 module.exports = (req, res, next) => {
-    console.log();
-    console.log('Meu middleware importado via js');
-    console.log();
+    if (req.body.nome) {
+        console.log();
+        console.log(`VI q vc postou ${req.body.sobrenome}`)
+        console.log();
+    }
 
     next();
 };
