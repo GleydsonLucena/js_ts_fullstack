@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect()
+const connectionString = 'mongodb+srv://gleydsonlucena:gleydson222@cursojs.u1kvxwd.mongodb.net/BASEDEDADOS?retryWrites=true&w=majority&appName=cursojs';
+
+mongoose.connect(connectionString)
+    .then(resp => app.emit('OK!'));
 
 const routes = require('./routes')
 const path = require('path');
