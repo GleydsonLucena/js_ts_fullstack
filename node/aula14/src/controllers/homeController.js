@@ -1,9 +1,3 @@
-const HomeModel = require('../models/HomeModel');
-
-HomeModel.find()
-    .then(dados => dados)
-    .catch(e => console.log(e));
-
 
 exports.paginaInicial =
     (req, res) => {
