@@ -1,0 +1,1 @@
+mongodb+srv://gleydsonlucena:<password>@cursojs.u1kvxwd.mongodb.net/?retryWrites=true&w=majority&appName=cursojs
