@@ -4,9 +4,8 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-const connectionString = 'mongodb+srv://gleydsonlucena:gleydson222@cursojs.u1kvxwd.mongodb.net/BASEDEDADOS?retryWrites=true&w=majority&appName=cursojs';
 
-mongoose.connect(connectionString)
+mongoose.connect(process.env.CONNECTIONSTRING)
     .then(resp => app.emit('OK!'))
     .catch(e => console.log(e));
 
