@@ -4,9 +4,8 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-
 mongoose.connect(process.env.CONNECTIONSTRING)
-    .then(() => app.emit('OK!'))
+    .then(() => app.emit('pronto'))
     .catch(e => console.log(e));
 
 const session = require('express-session');
@@ -22,22 +21,9 @@ const { middlewareGlobal } = require('./src/middlewares/middleware');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-const mongoClientPromise = new Promise((resolve) => {
-    mongoose.connection.on("connected", () => {
-        const client = mongoose.connection.getClient();
-        resolve(client);
-    });
-});
-
-const sessionStore = MongoStore.create({
-    clientPromise: mongoClientPromise,
-    dbName: "gleydsonlucena",
-    collection: "sessions"
-});
-
 const sessionOptions = session({
-    secret: 'keyboard cat',
-    store: sessionStore,
+    secret: 'akasdfj0út23453456+54qt23qv  qwf qwer qwer qewr asdasdasda a6()',
+    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -45,7 +31,6 @@ const sessionOptions = session({
         httpOnly: true
     }
 });
-
 app.use(sessionOptions);
 app.use(flash());
 
@@ -55,7 +40,7 @@ app.set('view engine', 'ejs');
 // Nossos próprios middlewares
 
 app.use(middlewareGlobal);
-app.use(routes)
+app.use(routes);
 
 app.on('OK!', () => {
     app.listen(3000,
