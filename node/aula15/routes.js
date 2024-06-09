@@ -3,12 +3,13 @@ const route = express.Router();
 const homeController = require('./src/controllers/homeController');
 const contatoController = require('./src/controllers/contatoController');
 
-// Rotas da home
+// rotas da home
+
 route.get('/', homeController.paginaInicial);
 route.post('/', homeController.trataPost);
 
-// Rotas de contato
-route.get('/contato', contatoController.paginaInicial);
+// rotas de contato
 
+route.get('/contato', contatoController.rotaContato);
 
 module.exports = route;

@@ -1,9 +1,13 @@
-exports.paginaInicial = (req, res) => {
-  res.render('index');
-  return;
-};
 
-exports.trataPost = (req, res) => {
-  res.send(req.body);
-  return;
-};
+exports.paginaInicial =
+    (req, res) => {
+        console.log(req.flash('erro', req.flash('info')))
+        res.render('index');
+        return;
+    }
+
+exports.trataPost =
+    (req, res) => {
+        res.send(req.body);
+        return;
+    }
