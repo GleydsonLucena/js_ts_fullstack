@@ -1,3 +1,9 @@
+const HomeModel = require('..models/HomeModel')
+
+HomeModel.create( { 
+    titulo: 'Um titulo de testes', 
+    descricao:  'Uma descricao de testes'
+}).then(dados=>;
 
 exports.paginaInicial =
     (req, res) => {
