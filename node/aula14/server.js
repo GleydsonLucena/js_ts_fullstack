@@ -6,7 +6,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.CONNECTIONSTRING)
-    .then(resp => app.emit('OK!'))
+    .then(() => app.emit('pronto'))
     .catch(e => console.log(e));
 
 const routes = require('./routes');
@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 app.use(middlewareGlobal);
 app.use(routes)
 
-app.on('OK!', () => {
+app.on('pronto', () => {
     app.listen(3000,
         () => {
             console.log('Acessar http://localhost:3000');
