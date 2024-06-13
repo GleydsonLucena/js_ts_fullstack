@@ -14,7 +14,7 @@ const ContatoModel = mongoose.model('Contato', ContatoSchema);
 function Contato(body) {
   this.body = body;
   this.errors = [];
-  this.contato = null;
+  this.contato = null;dsf
 }
 
 Contato.prototype.register = async function() {
