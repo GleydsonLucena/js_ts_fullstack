@@ -12,12 +12,26 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 export default class Main extends Component {
   state = {
     novaTarefa: '',
-    tarefas: [
-      'Fazer café',
-      'Beber água',
-      'Estudar',
-    ],
+    tarefas: [],
   };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { tarefas } = this.state;
+    let { novaTarefa } = this.state;
+    novaTarefa = novaTarefa.trim();
+
+
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
+
+    const novasTarefas = [...tarefas];
+
+    this.setState({
+      tarefas: [...novasTarefas, novaTarefa],
+    });
+
+  }
+
 
   handleChange = (event) => {
     this.setState({ novaTarefa: event.target.value });
@@ -47,8 +61,8 @@ export default class Main extends Component {
 
             <li key={tarefa}>
 
+              {tarefa}
               <div className="btn-tarefas">
-                {tarefa}
                 <button type="button"> <FontAwesomeIcon icon={faPenToSquare} /></button>
                 <button type="button"> <FontAwesomeIcon icon={faTrashCan} /></button>
               </div>
