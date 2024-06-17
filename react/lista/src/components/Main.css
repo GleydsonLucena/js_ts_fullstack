@@ -78,4 +78,5 @@ li {
 li:hover {
   background-color: var(--cor4);
   border-radius: .5rem;
+  color: var(--cor1);
 }

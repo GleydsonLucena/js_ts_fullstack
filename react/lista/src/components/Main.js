@@ -37,6 +37,20 @@ export default class Main extends Component {
     this.setState({ novaTarefa: event.target.value });
   }
 
+  handleDelete = (e, index) => {
+    const { tarefas } = this.state;
+    const novasTarefas = [...tarefas];
+    novasTarefas.splice(index, 1)
+
+    this.setState({
+      tarefas: [...novasTarefas],
+    });
+  };
+
+  handleEdit = (e, index) => {
+    console.log('edit', index)
+  };
+
   render() {
     const { novaTarefa, tarefas } = this.state;
 
@@ -56,15 +70,21 @@ export default class Main extends Component {
         </form>
 
         <ul className="tarefas">
-          {tarefas.map((tarefa) =>
+          {tarefas.map((tarefa, index) =>
           (
 
             <li key={tarefa}>
 
               {tarefa}
               <div className="btn-tarefas">
-                <button type="button"> <FontAwesomeIcon icon={faPenToSquare} /></button>
-                <button type="button"> <FontAwesomeIcon icon={faTrashCan} /></button>
+                <button
+                  onClick={(e) => this.handleEdit(e, index)}
+                  type="button"> <FontAwesomeIcon
+                    icon={faPenToSquare} /></button>
+                <button
+                  onClick={(e) => this.handleDelete(e, index)}
+                  type="button"> <FontAwesomeIcon
+                    icon={faTrashCan} /></button>
               </div>
 
             </li>
