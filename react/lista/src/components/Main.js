@@ -5,11 +5,18 @@ import "./Main.css";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class Main extends Component {
   state = {
     novaTarefa: '',
+    tarefas: [
+      'Fazer café',
+      'Beber água',
+      'Estudar',
+    ],
   };
 
   handleChange = (event) => {
@@ -17,7 +24,7 @@ export default class Main extends Component {
   }
 
   render() {
-    const { novaTarefa } = this.state;
+    const { novaTarefa, tarefas } = this.state;
 
     return (
       <div className="main">
@@ -33,6 +40,25 @@ export default class Main extends Component {
             Enviar <FontAwesomeIcon icon={faShareFromSquare} />
           </button>
         </form>
+
+        <ul className="tarefas">
+          {tarefas.map((tarefa) =>
+          (
+
+            <li key={tarefa}>
+
+              <div className="btn-tarefas">
+                {tarefa}
+                <button type="button"> <FontAwesomeIcon icon={faPenToSquare} /></button>
+                <button type="button"> <FontAwesomeIcon icon={faTrashCan} /></button>
+              </div>
+
+            </li>
+
+          ))}
+
+        </ul>
+
       </div>
     )
   }

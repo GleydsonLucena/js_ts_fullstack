@@ -31,3 +31,44 @@
   cursor: pointer;
   background-color: var(--cor4);
 }
+
+/* buttons */
+
+.tarefas {
+  margin-top: 3rem;
+  padding-inline: 1rem;
+  width: 65%;
+  margin: 1rem auto 0 auto;
+}
+
+.btn-tarefas {
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+.btn-tarefas button[type="button"] {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: .7rem;
+  color: var(--cor5);
+  border: none;
+  margin-left: .3rem;
+}
+
+.btn-tarefas button[type="button"]:not(:last-child) {
+  margin-left: .5rem;
+
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.btn-tarefas:first-child{
+  font-weight: 600;
+}
