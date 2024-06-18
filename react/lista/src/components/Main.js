@@ -16,12 +16,29 @@ export default class Main extends Component {
     index: -1,
   };
 
+  componentDidMount() {
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'));
+
+    if(!tarefas) return;
+
+    this.setState( { tarefas });
+
+
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { tarefas } = this.state;
+
+    if (tarefas === prevState.tarefas) return;
+
+    localStorage.setItem('tarefas', JSON.stringify(tarefas))
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { tarefas, index } = this.state;
     let { novaTarefa } = this.state;
     novaTarefa = novaTarefa.trim();
-
 
     if (tarefas.indexOf(novaTarefa) !== -1) return;
     if (novaTarefa === '') return;
@@ -31,6 +48,7 @@ export default class Main extends Component {
     if (index === -1) {
       this.setState({
         tarefas: [...novasTarefas, novaTarefa],
+        dataSave: [...novasTarefas],
         novaTarefa: ''
       });
     } else {
@@ -40,8 +58,9 @@ export default class Main extends Component {
         tarefas: [...novasTarefas],
         index: -1
       });
-
     }
+
+
 
   }
 
