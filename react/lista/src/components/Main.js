@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import "./Main.css";
 
-//form
+import "./Main.css";
+import Form from "./Form";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
-
 
 export default class Main extends Component {
   state = {
@@ -22,8 +20,6 @@ export default class Main extends Component {
     if(!tarefas) return;
 
     this.setState( { tarefas });
-
-
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -59,9 +55,6 @@ export default class Main extends Component {
         index: -1
       });
     }
-
-
-
   }
 
   handleChange = (event) => {
@@ -93,16 +86,11 @@ export default class Main extends Component {
       <div className="main">
         <h1>Lista de tarefas</h1>
 
-        <form action="#" onSubmit={this.handleSubmit} className="form">
-          <input
-            placeholder="Digite algo:"
-            value={novaTarefa}
-            onChange={this.handleChange}
-            type="text" />
-          <button type="submit">
-            Enviar <FontAwesomeIcon icon={faShareFromSquare} />
-          </button>
-        </form>
+        <Form
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        novaTarefa={novaTarefa}
+        />
 
         <ul className="tarefas">
           {tarefas.map((tarefa, index) =>
