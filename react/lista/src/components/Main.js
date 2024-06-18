@@ -2,10 +2,7 @@ import React, { Component } from "react";
 
 import "./Main.css";
 import Form from "./Form";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import Tarefas from "./Tarefas";
 
 export default class Main extends Component {
   state = {
@@ -17,9 +14,9 @@ export default class Main extends Component {
   componentDidMount() {
     const tarefas = JSON.parse(localStorage.getItem('tarefas'));
 
-    if(!tarefas) return;
+    if (!tarefas) return;
 
-    this.setState( { tarefas });
+    this.setState({ tarefas });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -87,34 +84,18 @@ export default class Main extends Component {
         <h1>Lista de tarefas</h1>
 
         <Form
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        novaTarefa={novaTarefa}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          novaTarefa={novaTarefa}
         />
 
-        <ul className="tarefas">
-          {tarefas.map((tarefa, index) =>
-          (
+        <Tarefas
+          handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
+          tarefas={tarefas}
+        />
 
-            <li key={tarefa}>
 
-              {tarefa}
-              <div className="btn-tarefas">
-                <button
-                  onClick={(e) => this.handleEdit(e, index)}
-                  type="button"> <FontAwesomeIcon
-                    icon={faPenToSquare} /></button>
-                <button
-                  onClick={(e) => this.handleDelete(e, index)}
-                  type="button"> <FontAwesomeIcon
-                    icon={faTrashCan} /></button>
-              </div>
-
-            </li>
-
-          ))}
-
-        </ul>
 
       </div>
     )

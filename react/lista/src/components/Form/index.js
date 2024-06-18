@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShareFromSquare } from '@fortawesome/free-solid-svg-icons'
 
-export default function Form( { handleChange,handleSubmit,novaTarefa }) {
+export default function Form({ handleChange, handleSubmit, novaTarefa }) {
   return (
     <form action="#" onSubmit={handleSubmit} className="form">
       <input
@@ -21,7 +21,7 @@ export default function Form( { handleChange,handleSubmit,novaTarefa }) {
   )
 }
 
-Form.PropsTypes = {
+Form.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   novaTarefa: PropTypes.string.isRequired,

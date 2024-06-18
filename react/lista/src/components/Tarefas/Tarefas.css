@@ -1,0 +1,45 @@
+.tarefas {
+  padding-inline: .8rem;
+  width: 65%;
+  margin: 1rem auto 0 auto;
+}
+
+.btn-tarefas {
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+.btn-tarefas button[type="button"] {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: .7rem;
+  color: var(--cor5);
+  border: none;
+  margin-left: .3rem;
+}
+
+.btn-tarefas button[type="button"]:not(:first-child) {
+  margin-left: .5rem;
+  color: red;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: .5rem;
+  list-style-type: none;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+li:hover {
+  background-color: var(--cor4);
+  border-radius: .5rem;
+  color: var(--cor1);
+}
