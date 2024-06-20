@@ -1,0 +1,13 @@
+.menu,
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.menu li,
+a {
+  text-decoration: none;
+}
