@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/posts' element={<Posts />}></Route>
         {/* <Route path='/posts/:id' element={<Posts />}></Route> */}
         <Route path='/posts' element={<Posts />}>
-          <Route path=':id' element={<Post/>}></Route>
+          <Route path=':id' element={<Post />}></Route>
         </Route>
         <Route path='/redirect' element={<Redirect />}></Route>
         <Route path='/*' element={<NotFound />}></Route>
