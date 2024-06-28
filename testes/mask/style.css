@@ -8,13 +8,17 @@ main {
   display: grid;
   place-content: center;
   min-height: 100vh;
-  background: #000;
+  background: yellow;
 }
 
 .container {
   width: 15rem;
   height: 10rem;
   background-color: #fff;
+
+  --mask: radial-gradient(1.5rem at bottom, transparent 95%, black) -7.6rem;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
 .container2 {
@@ -24,6 +28,10 @@ main {
   border: 0.1rem dashed #000;
   border-left: 0;
   border-right: 0;
+
+  --mask: radial-gradient(1.5rem at 1.5rem 1.5rem, transparent 95%, black) -1.6rem -6.5rem;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
 .container3 {
@@ -31,4 +39,7 @@ main {
   width: 15rem;
   height: 10rem;
   background-color: #fff;
+  --mask: radial-gradient(1.5rem at top, transparent 95%, black) -7.6rem;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
